@@ -46,7 +46,7 @@ const navigateur = NAVIGATEURS.find((p) => existsSync(p));
 if (!navigateur) { console.error("Edge ou Chrome introuvable : renseigner NAVIGATEUR"); process.exit(1); }
 
 const pause = (ms) => new Promise((r) => setTimeout(r, ms));
-const profil = mkdtempSync(join(tmpdir(), "penly-captures-"));
+const profil = mkdtempSync(join(tmpdir(), "sig-chantier-captures-"));
 const processus = spawn(navigateur, ["--headless=new", "--disable-gpu", "--no-first-run", "--hide-scrollbars",
   `--remote-debugging-port=${PORT}`, `--user-data-dir=${profil}`, `--window-size=${LARGEUR},${HAUTEUR}`,
   "about:blank"], { stdio: "ignore" });

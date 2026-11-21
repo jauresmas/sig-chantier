@@ -1,8 +1,8 @@
-"""Paramètres et outils communs à la publication du SIG chantier Penly dans MapStore.
+"""Paramètres et outils communs à la publication du SIG chantier dans MapStore.
 
 La pile MapStore (MapStore + GeoServer + nginx sous Docker, PostgreSQL/PostGIS sur la machine) est un
 dépôt à part : son dossier est donné par MAPSTORE_PILE (fichier 05_mapstore/.env). Ses comptes admin sont
-lus dans son propre .env ; le mot de passe du rôle PostgreSQL « penly » est dans 05_mapstore/.env.
+lus dans son propre .env ; le mot de passe du rôle PostgreSQL « sig_chantier » est dans 05_mapstore/.env.
 Aucun mot de passe n'est écrit dans ces scripts ni affiché. Bibliothèque standard uniquement.
 """
 import base64
@@ -18,8 +18,8 @@ from functools import cache
 from pathlib import Path
 
 ICI = Path(__file__).resolve().parent
-RACINE = ICI.parent                                   # racine du dépôt sig-chantier-penly
-GPKG = RACINE / "02_donnees" / "penly_sig.gpkg"
+RACINE = ICI.parent                                   # racine du dépôt sig-chantier
+GPKG = RACINE / "02_donnees" / "sig_chantier.gpkg"
 ENV_LOCAL = ICI / ".env"
 
 
@@ -80,22 +80,22 @@ PSQL = _psql()
 
 # Base des couches publiées (créée par 00_creer_base.py) : schéma brut = import du GeoPackage,
 # schéma carto = tables mises en forme pour la carte (sql/carto.sql), seules publiées par GeoServer
-PG = {"host": "localhost", "port": 5432, "dbname": "penly_carto", "user": "penly"}
+PG = {"host": "localhost", "port": 5432, "dbname": "sig_chantier", "user": "sig_chantier"}
 PG_DEPUIS_DOCKER = "host.docker.internal"
 
 BASE_URL = parametre("PILE_URL", "http://localhost:8097").rstrip("/")
 GEOSERVER = f"{BASE_URL}/geoserver"
 MAPSTORE = f"{BASE_URL}/mapstore"
-ESPACE = "penly"                                      # espace de travail GeoServer
+ESPACE = "sig_chantier"                               # espace de travail GeoServer
 ENTREPOT = "carto"                                    # entrepôt PostGIS
-DEPOT = "https://github.com/jauresmas/sig-chantier-penly"
-CARTE_WEB = "https://jauresmas.github.io/sig-chantier-penly/"
+DEPOT = "https://github.com/jauresmas/sig-chantier"
+CARTE_WEB = "https://jauresmas.github.io/sig-chantier/"
 
 
 def mot_de_passe_base():
-    mdp = env().get("PENLY_DB_PASSWORD")
+    mdp = env().get("SIG_CHANTIER_DB_PASSWORD")
     if not mdp:
-        sys.exit("PENLY_DB_PASSWORD absent : lancer d'abord python 05_mapstore/00_creer_base.py")
+        sys.exit("SIG_CHANTIER_DB_PASSWORD absent : lancer d'abord python 05_mapstore/00_creer_base.py")
     return mdp
 
 
@@ -121,7 +121,9 @@ def ogr2ogr(source, couches, schema, *options):
         programme = str(QGIS / "bin" / "ogr2ogr.exe")
     else:
         programme = shutil.which("ogr2ogr") or sys.exit("ogr2ogr introuvable : installer QGIS ou renseigner QGIS_DIR")
-    cible = f"PG:host={PG['host']} port={PG['port']} dbname={PG['dbname']} user={PG['user']}"
+    # Schéma actif : sinon ses tables sont listées « schema.table » et -overwrite ne les retrouve pas
+    cible = (f"PG:host={PG['host']} port={PG['port']} dbname={PG['dbname']} user={PG['user']} "
+             f"active_schema={schema}")
     subprocess.run([programme, "-f", "PostgreSQL", cible, str(source), *couches, "-overwrite",
                     "-lco", f"SCHEMA={schema}", "-lco", "GEOMETRY_NAME=geom", "-lco", "FID=fid",
                     "-lco", "SPATIAL_INDEX=GIST", "-lco", "PRECISION=NO", "--config", "PG_USE_COPY", "YES", *options],

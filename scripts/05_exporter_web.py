@@ -18,7 +18,7 @@ ogr.UseExceptions()
 osr.UseExceptions()
 
 RACINE = Path(__file__).resolve().parent.parent
-GPKG = RACINE / "02_donnees" / "penly_sig.gpkg"
+GPKG = RACINE / "02_donnees" / "sig_chantier.gpkg"
 MANIFESTE = RACINE / "01_donnees_brutes" / "manifeste.json"
 SORTIE = RACINE / "docs" / "data"
 
@@ -48,7 +48,7 @@ COUCHES = [
     ("cercles", "Cercles d'étude 2 / 5 / 10 / 20 km", "projet",
      [("zon_cercles", {"rayon_km": "rayon_km", "libelle": "libelle"}, {})], {}),
     ("cnpe", "CNPE de Penly", "edf",
-     [("zon_cnpe_penly", {"nom": "nom", "source": "source"}, {})], {}),
+     [("zon_cnpe", {"nom": "nom", "source": "source"}, {})], {}),
     ("production", "Installations de production et de stockage", "ore",
      [("prod_registre_installations", {
          "nom": "nominstallation", "filiere": "filiere", "technologie": "technologie",
@@ -177,7 +177,7 @@ def main():
     wgs.SetAxisMappingStrategy(osr.OAMS_TRADITIONAL_GIS_ORDER)
     vers_wgs = osr.CoordinateTransformation(l93, wgs)
 
-    cnpe_lyr = ds.GetLayerByName("zon_cnpe_penly")
+    cnpe_lyr = ds.GetLayerByName("zon_cnpe")
     cnpe_entite = cnpe_lyr.GetNextFeature()  # l'entité doit rester référencée
     centre = cnpe_entite.GetGeometryRef().Clone()
     centre.FlattenTo2D()

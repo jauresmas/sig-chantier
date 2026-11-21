@@ -3,7 +3,7 @@
 !01_donnees_brutes/manifeste.json
 
 # Base reconstruite par scripts/02_construire_gpkg.py
-02_donnees/penly_sig.gpkg
+02_donnees/sig_chantier.gpkg
 02_donnees/*.gpkg-wal
 02_donnees/*.gpkg-shm
 

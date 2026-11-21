@@ -5,7 +5,7 @@ primary_target: "docs/index.html"
 related_targets: ["docs/app.js","docs/style.css"]
 ---
 
-# Carte web : SIG chantier Penly
+# Carte web : SIG chantier
 
 ## Scope
 

@@ -28,7 +28,7 @@
   },
   {
     "source": "EDF",
-    "fichier": "01_donnees_brutes/edf/indisponibilites_penly.csv",
+    "fichier": "01_donnees_brutes/edf/indisponibilites.csv",
     "page": "https://opendata.edf.fr/datasets/indisponibilites-des-moyens-de-production-edf-sa",
     "objets": 615,
     "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
@@ -37,7 +37,7 @@
   },
   {
     "source": "EDF",
-    "fichier": "01_donnees_brutes/edf/indisponibilites_penly_historique_2015.csv",
+    "fichier": "01_donnees_brutes/edf/indisponibilites_historique_2015.csv",
     "page": "https://opendata.edf.fr/datasets/historique-des-indisponibilites-des-moyens-de-production-de-edf-sa-depuis-2015",
     "objets": 7576,
     "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",

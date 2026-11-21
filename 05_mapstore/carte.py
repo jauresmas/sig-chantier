@@ -112,9 +112,9 @@ def config_carte(emprises=None, centre=(1.31, 49.95), zoom=11):
             "text_search_config": None,
         },
         "catalogServices": {
-            "services": {"penly": {"url": f"/geoserver/{ESPACE}/wms", "type": "wms", "autoload": True,
-                                   "title": "SIG chantier Penly (GeoServer)"}},
-            "selectedService": "penly",
+            "services": {"sig_chantier": {"url": f"/geoserver/{ESPACE}/wms", "type": "wms", "autoload": True,
+                                   "title": "SIG chantier (GeoServer)"}},
+            "selectedService": "sig_chantier",
         },
         "mapInfoConfiguration": {"trigger": "click", "infoFormat": "text/html", "showEmptyMessageGFI": False},
         "widgetsConfig": {"widgets": [], "layouts": {"md": [], "xxs": []}},

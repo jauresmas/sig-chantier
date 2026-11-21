@@ -1,4 +1,4 @@
-# SIG chantier Penly : démonstrateur open data
+# SIG chantier : démonstrateur open data
 
 Un SIG de chantier construit uniquement avec des **données ouvertes et gratuites**, autour du centre nucléaire de
 production d'électricité (CNPE) de Penly, à Petit-Caux (Seine-Maritime), où deux nouveaux réacteurs sont en projet.
@@ -14,7 +14,7 @@ PostGIS / GeoServer / MapStore.
 
 ## Carte web
 
-**Carte en ligne : <https://jauresmas.github.io/sig-chantier-penly/>**
+**Carte en ligne : <https://jauresmas.github.io/sig-chantier/>**
 
 `docs/` contient une carte web autonome (HTML, CSS et JavaScript, sans compilation) publiée par GitHub Pages.
 
@@ -43,7 +43,7 @@ Les mêmes couches publiées comme dans un SIG d'entreprise : base **PostGIS**, 
 19 styles SLD écrits en Python) et application dédiée dans **MapStore**, avec table des matières légendée, fiches au
 clic, signets sur les cercles d'étude et fonds IGN. Chaîne rejouable et détail dans [`05_mapstore/`](05_mapstore/README.md).
 
-![Application MapStore « SIG chantier Penly » : carte des contraintes et fiche de présentation](05_mapstore/images/application.png)
+![Application MapStore « SIG chantier » : carte des contraintes et fiche de présentation](05_mapstore/images/application.png)
 
 | Table des matières et légendes | Fiche d'une ICPE à la position douteuse |
 |---|---|
@@ -52,16 +52,16 @@ clic, signets sur les cercles d'étude et fonds IGN. Chaîne rejouable et détai
 ## Arborescence
 
 ```
-sig-chantier-penly/
+sig-chantier/
 ├── README.md
 ├── PRODUCT.md                  contexte produit de la carte web
 ├── 00_docs/                    documentation ; modeles/ : images des 4 modèles du Modeleur
 ├── 01_donnees_brutes/          téléchargements bruts par source (non versionnés) + manifeste.json (URL, date, licence)
 ├── 02_donnees/
-│   ├── penly_sig.gpkg          29 couches + 5 tables, Lambert-93 (non versionné, reconstruit par le script 02)
+│   ├── sig_chantier.gpkg       29 couches + 5 tables, Lambert-93 (non versionné, reconstruit par le script 02)
 │   └── pic_chantier.gpkg       modèle vide du PIC : pic_zone, pic_acces, pic_equipement
 ├── 03_qgis/
-│   ├── sig_chantier_penly.qgz  projet QGIS (chemins relatifs, styles, formulaires PIC, fonds IGN, mise en page A3)
+│   ├── sig_chantier.qgz        projet QGIS (chemins relatifs, styles, formulaires PIC, fonds IGN, mise en page A3)
 │   └── modeles/                4 modèles du Modeleur graphique (.model3)
 ├── 04_cao/                     plans CAO (DXF) à intégrer, dont l'exemple fictif
 ├── 05_mapstore/                publication PostGIS, GeoServer et MapStore ; images/ : captures de l'application
@@ -113,7 +113,7 @@ Emprise : carré englobant le cercle de 20 km autour du CNPE (lon 0,93 à 1,49 /
 végétation sur environ 10 × 10 km. Toutes les sources sont gratuites, sous **Licence Ouverte Etalab 2.0**.
 Détail et URL : `01_donnees_brutes/manifeste.json`.
 
-| Thème | Couches (`penly_sig.gpkg`) | Source | Objets |
+| Thème | Couches (`sig_chantier.gpkg`) | Source | Objets |
 |---|---|---|---|
 | Production | `prod_centrales_nucleaires` / `_hydrauliques` / `_thermiques` (France entière) | EDF (opendata.edf.fr) | 57 / 51 / 19 |
 | Production | `prod_registre_installations` | Agence ORE (RTE, Enedis, EDF SEI, ELD) | 98 |
@@ -123,8 +123,8 @@ Détail et URL : `01_donnees_brutes/manifeste.json`.
 | Risques | `env_icpe` | Géorisques (via Koumoul) | 315 |
 | Référentiel | `ref_communes`, `ref_routes`, `ref_voies_ferrees`, `ref_cours_eau`, `ref_surfaces_eau`, `ref_zones_activite`, `ref_batiments`, `ref_vegetation`, `ref_haies` | IGN BD TOPO V3 | 114 … 29 264 |
 | Foncier | `ref_parcelles_petit_caux` | DGFiP / Etalab | 10 153 |
-| Zonages | `zon_cnpe_penly`, `zon_cercles` | calculés | 1 / 4 |
-| Tables EDF | `tab_indisponibilites_penly` (en cours), `tab_indisponibilites_penly_hist` (depuis 2015), `tab_historique_productions` (depuis 1948), `tab_disponibilite_parc_nucleaire`, `tab_seuils_rejets_thermiques` | EDF | 615 / 7 576 / 217 / 24 / 51 |
+| Zonages | `zon_cnpe`, `zon_cercles` | calculés | 1 / 4 |
+| Tables EDF | `tab_indisponibilites` (en cours), `tab_indisponibilites_hist` (depuis 2015), `tab_historique_productions` (depuis 1948), `tab_disponibilite_parc_nucleaire`, `tab_seuils_rejets_thermiques` | EDF | 615 / 7 576 / 217 / 24 / 51 |
 
 Fonds de plan (flux, rien à télécharger) : Plan IGN v2, orthophotographie, ombrage du relief, cadastre (Géoplateforme IGN).
 
@@ -151,7 +151,7 @@ Dans QGIS : type, lot et statut obligatoires ; auteur, date de mise à jour, sta
 
 ## Modèles du Modeleur graphique (`03_qgis/modeles/`)
 
-Ils sont aussi copiés dans la boîte à outils du profil QGIS : *Boîte à outils de traitements > Modèles > SIG chantier Penly*.
+Ils sont aussi copiés dans la boîte à outils du profil QGIS : *Boîte à outils de traitements > Modèles > SIG chantier*.
 
 | Modèle | Entrées | Sorties | Test sur les données |
 |---|---|---|---|

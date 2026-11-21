@@ -1,7 +1,7 @@
 """
 02_construire_gpkg.py : Assemble les données brutes dans deux GeoPackages en Lambert-93 (EPSG:2154).
 
-  02_donnees/penly_sig.gpkg     données de référence (réseaux, production, environnement, zonages, tables de production)
+  02_donnees/sig_chantier.gpkg     données de référence (réseaux, production, environnement, zonages, tables de production)
   02_donnees/pic_chantier.gpkg  modèle vide du Plan d'Installation de Chantier (zones, accès, équipements)
 
 Préfixes des couches :
@@ -25,7 +25,7 @@ ogr.UseExceptions()
 RACINE = Path(__file__).resolve().parent.parent
 BRUT = RACINE / "01_donnees_brutes"
 SORTIE = RACINE / "02_donnees"
-GPKG = SORTIE / "penly_sig.gpkg"
+GPKG = SORTIE / "sig_chantier.gpkg"
 PIC = SORTIE / "pic_chantier.gpkg"
 
 PENLY_LAT, PENLY_LON = 49.976144, 1.210236
@@ -68,8 +68,8 @@ COUCHES = {
 }
 
 TABLES = {
-    "tab_indisponibilites_penly": "edf/indisponibilites_penly.csv",
-    "tab_indisponibilites_penly_hist": "edf/indisponibilites_penly_historique_2015.csv",
+    "tab_indisponibilites": "edf/indisponibilites.csv",
+    "tab_indisponibilites_hist": "edf/indisponibilites_historique_2015.csv",
     "tab_seuils_rejets_thermiques": "edf/seuils_rejets_thermiques.csv",
     "tab_historique_productions": "edf/historique_productions_1948.csv",
     "tab_disponibilite_parc_nucleaire": "edf/disponibilite_parc_nucleaire.csv",
@@ -134,11 +134,11 @@ def zonages():
     pt.Transform(tr)
 
     ds = ogr.Open(str(GPKG), 1)
-    for nom in ("zon_cnpe_penly", "zon_cercles"):
+    for nom in ("zon_cnpe", "zon_cercles"):
         if ds.GetLayerByName(nom):
             ds.DeleteLayer(nom)
 
-    lyr = ds.CreateLayer("zon_cnpe_penly", l93, ogr.wkbPoint)
+    lyr = ds.CreateLayer("zon_cnpe", l93, ogr.wkbPoint)
     for champ in ("nom", "exploitant", "source"):
         lyr.CreateField(ogr.FieldDefn(champ, ogr.OFTString))
     f = ogr.Feature(lyr.GetLayerDefn())
@@ -164,7 +164,7 @@ def zonages():
         f.SetGeometry(ogr.ForceToMultiPolygon(pt.Buffer(r * 1000, 64)))
         lyr.CreateFeature(f)
     ds = None
-    print("  zon_cnpe_penly / zon_cercles          ok")
+    print("  zon_cnpe / zon_cercles          ok")
 
 
 def modele_pic():

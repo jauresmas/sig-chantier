@@ -1,5 +1,5 @@
 ---
-name: SIG chantier Penly
+name: SIG chantier
 description: Carte web des contraintes autour du CNPE de Penly, dessinée comme un plan cadastral à l'encre sépia sur papier.
 colors:
   encre: "#2f241d"
@@ -133,7 +133,7 @@ components:
     padding: "10px 12px"
 ---
 
-# Design System: SIG chantier Penly
+# Design System: SIG chantier
 
 ## Overview
 

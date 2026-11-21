@@ -1,6 +1,6 @@
-"""Étape 2 : publie les couches de penly_carto.carto dans le GeoServer de la pile MapStore.
+"""Étape 2 : publie les couches de sig_chantier.carto dans le GeoServer de la pile MapStore.
 
-Espace de travail penly, entrepôt PostGIS carto, un style SLD par couche (styles.py), titres et résumés
+Espace de travail sig_chantier, entrepôt PostGIS carto, un style SLD par couche (styles.py), titres et résumés
 (catalogue.py). Les tables restent en Lambert-93 : GeoServer les reprojette pour MapStore.
 Idempotent : relancer met à jour sans dupliquer.
 
@@ -29,7 +29,7 @@ def entrepot(gs):
         "encode functions": "true", "Support on the fly geometry simplification": "true",
         "validate connections": "true", "max connections": "10", "min connections": "1",
     }
-    corps = {"dataStore": {"name": ENTREPOT, "description": "SIG chantier Penly : couches publiées (PostGIS)",
+    corps = {"dataStore": {"name": ENTREPOT, "description": "SIG chantier : couches publiées (PostGIS)",
                            "enabled": True, "connectionParameters": {
                                "entry": [{"@key": k, "$": v} for k, v in parametres.items()]}}}
     chemin = f"/workspaces/{ESPACE}/datastores"
@@ -64,7 +64,7 @@ def couche(gs, c):
         gs.requete("POST", chemin, ft)
     gs.requete("PUT", f"/layers/{ESPACE}:{nom}", {"layer": {
         "defaultStyle": {"name": c["style"], "workspace": ESPACE},
-        "attribution": {"title": "SIG chantier Penly · données ouvertes", "href": DEPOT}}})
+        "attribution": {"title": "SIG chantier · données ouvertes", "href": DEPOT}}})
 
 
 def main():

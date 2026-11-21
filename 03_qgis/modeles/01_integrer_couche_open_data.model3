@@ -141,13 +141,13 @@
   <Option name="designerParameterValues"/>
   <Option name="groupBoxes"/>
   <Option name="help" type="Map">
-    <Option value="SIG chantier Penly" name="ALG_CREATOR" type="QString"/>
+    <Option value="SIG chantier" name="ALG_CREATOR" type="QString"/>
     <Option value="Télécharge une couche GeoJSON depuis une API (Data Fair des portails open data, WFS Géoplateforme...), la reprojette en RGF93 / Lambert-93 et force des géométries multiples, prête à être enregistrée dans le GeoPackage du projet. Équivalent graphique des scripts 01 et 02 pour une couche." name="ALG_DESC" type="QString"/>
     <Option value="1.0" name="ALG_VERSION" type="QString"/>
   </Option>
   <Option value="Version2" name="internal_version" type="QString"/>
   <Option name="modelVariables"/>
-  <Option value="SIG chantier Penly" name="model_group" type="QString"/>
+  <Option value="SIG chantier" name="model_group" type="QString"/>
   <Option value="01 · Intégrer une couche open data (API/WFS -> Lambert-93)" name="model_name" type="QString"/>
   <Option value="" name="outputGroup" type="QString"/>
   <Option name="outputOrder"/>

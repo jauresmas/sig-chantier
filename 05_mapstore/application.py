@@ -7,7 +7,7 @@ import urllib.request
 
 from commun import MAPSTORE
 
-NOM = "sig-chantier-penly"
+NOM = "sig-chantier"
 
 # Impression (module absent de l'image MapStore), 3D, temps, tutoriel, annotations, téléchargement WPS et
 # enregistrement (l'application est en lecture ; l'administrateur garde la carte source)
@@ -29,7 +29,7 @@ def logo():
     svg = """<svg xmlns="http://www.w3.org/2000/svg" width="440" height="44" viewBox="0 0 440 44">
 <circle cx="20" cy="22" r="11" fill="#faf8f3" stroke="#2f241d" stroke-width="2"/>
 <circle cx="20" cy="22" r="5" fill="#c8385a"/>
-<text x="42" y="20" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700" fill="#2f241d">SIG chantier Penly</text>
+<text x="42" y="20" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700" fill="#2f241d">SIG chantier</text>
 <text x="42" y="37" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#5a4a3d">Contraintes autour du CNPE de Penly · Petit-Caux (76)</text>
 </svg>"""
     return "data:image/svg+xml;base64," + base64.b64encode(svg.encode("utf-8")).decode()
@@ -61,5 +61,5 @@ def adapter(p, carte_id=None):
 def contexte(config_carte, carte_id=None):
     plugins = [adapter(p, carte_id) for p in plugins_standard()
                if (p if isinstance(p, str) else p["name"]) not in RETIRES]
-    return {"windowTitle": "SIG chantier Penly", "mapConfig": config_carte, "theme": THEME,
+    return {"windowTitle": "SIG chantier", "mapConfig": config_carte, "theme": THEME,
             "customVariablesEnabled": True, "plugins": {"desktop": plugins}, "userPlugins": [], "templates": []}

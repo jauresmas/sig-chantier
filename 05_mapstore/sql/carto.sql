@@ -35,7 +35,7 @@ SELECT 1 AS fid, 'CNPE de Penly'::text AS nom, z.exploitant, 'Petit-Caux, Seine-
        'ne sont pas publiques.'::text AS projet,
        'EDF, opendata.edf.fr (centrales de production nucléaire)'::text AS source,
        z.geom::geometry(Point, 2154) AS geom
-FROM zon_cnpe_penly z
+FROM zon_cnpe z
 CROSS JOIN (SELECT count(*) AS tranches, min(puissance_installee)::numeric AS unitaire,
                    sum(puissance_installee)::numeric AS totale,
                    string_agg(left(date_de_mise_en_service_industrielle::text, 4), ' et '

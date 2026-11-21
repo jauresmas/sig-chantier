@@ -35,7 +35,7 @@ PENLY_LAT, PENLY_LON = 49.976144, 1.210236
 ZONE_20KM = (0.93, 49.80, 1.49, 50.16)   # contexte : cercle de 20 km (rayon PPI)
 ZONE_5KM = (1.14, 49.93, 1.28, 50.02)    # abords du chantier : bâti, végétation
 
-UA = {"User-Agent": "sig-chantier-penly/1.0 (projet personnel open data)"}
+UA = {"User-Agent": "sig-chantier/1.0 (projet personnel open data)"}
 MANIFESTE = []
 
 
@@ -154,8 +154,8 @@ def edf():
 
     est_penly = lambda r: "PENLY" in str(r.get("nom", "")).upper()
     tables = {
-        "indisponibilites-des-moyens-de-production-edf-sa": ("indisponibilites_penly", {"q": "PENLY"}, est_penly),
-        "historique-des-indisponibilites-des-moyens-de-production-de-edf-sa-depuis-2015": ("indisponibilites_penly_historique_2015", {"q": "PENLY"}, est_penly),
+        "indisponibilites-des-moyens-de-production-edf-sa": ("indisponibilites", {"q": "PENLY"}, est_penly),
+        "historique-des-indisponibilites-des-moyens-de-production-de-edf-sa-depuis-2015": ("indisponibilites_historique_2015", {"q": "PENLY"}, est_penly),
         "seuils-et-limites-des-rejets-thermiques-aux-abords-des-centrales-nucleaires-d-edf-sa": ("seuils_rejets_thermiques", None, None),
         "historique-des-productions-edf-sa": ("historique_productions_1948", None, None),
         "disponibilite-du-parc-nucleaire-d-edf-sa-depuis-2002": ("disponibilite_parc_nucleaire", None, None),

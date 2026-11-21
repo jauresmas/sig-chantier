@@ -476,13 +476,13 @@
   <Option name="designerParameterValues"/>
   <Option name="groupBoxes"/>
   <Option name="help" type="Map">
-    <Option value="SIG chantier Penly" name="ALG_CREATOR" type="QString"/>
+    <Option value="SIG chantier" name="ALG_CREATOR" type="QString"/>
     <Option value="Crée des cercles concentriques autour d'un site ponctuel (par défaut 2, 5, 10 et 20 km : abords du chantier, zone rapprochée, zone élargie, rayon du PPI) en Lambert-93, avec le champ rayon_km. Équivalent graphique de la fonction zonages() du script 02." name="ALG_DESC" type="QString"/>
     <Option value="1.0" name="ALG_VERSION" type="QString"/>
   </Option>
   <Option value="Version2" name="internal_version" type="QString"/>
   <Option name="modelVariables"/>
-  <Option value="SIG chantier Penly" name="model_group" type="QString"/>
+  <Option value="SIG chantier" name="model_group" type="QString"/>
   <Option value="02 · Zonages d'étude autour d'un site" name="model_name" type="QString"/>
   <Option value="" name="outputGroup" type="QString"/>
   <Option name="outputOrder"/>

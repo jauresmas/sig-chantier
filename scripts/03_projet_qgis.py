@@ -1,5 +1,5 @@
 """
-03_projet_qgis.py : Construit le projet QGIS 03_qgis/sig_chantier_penly.qgz (couches, styles, formulaires PIC, fonds IGN, mise en page).
+03_projet_qgis.py : Construit le projet QGIS 03_qgis/sig_chantier.qgz (couches, styles, formulaires PIC, fonds IGN, mise en page).
 
 Deux façons de le lancer :
   - dans QGIS (console Python) :  exec(open(r"<dossier>\\scripts\\03_projet_qgis.py", encoding="utf-8").read())
@@ -21,9 +21,9 @@ from qgis.PyQt.QtCore import Qt
 from qgis.PyQt.QtGui import QColor, QFont
 
 RACINE = Path(globals().get("__file__", Path.cwd() / "scripts" / "x.py")).resolve().parent.parent
-GPKG = (RACINE / "02_donnees" / "penly_sig.gpkg").as_posix()
+GPKG = (RACINE / "02_donnees" / "sig_chantier.gpkg").as_posix()
 PIC = (RACINE / "02_donnees" / "pic_chantier.gpkg").as_posix()
-QGZ = (RACINE / "03_qgis" / "sig_chantier_penly.qgz").as_posix()
+QGZ = (RACINE / "03_qgis" / "sig_chantier.qgz").as_posix()
 L93 = QgsCoordinateReferenceSystem("EPSG:2154")
 EMPRISE_5KM = QgsRectangle()  # calculée depuis le cercle de 5 km dans construire()
 POLICE = "Segoe UI"
@@ -198,7 +198,7 @@ def formulaire_pic(lyr, champ_type, valeurs_type):
 def construire(projet):
     projet.clear()
     projet.setCrs(L93)
-    projet.setTitle("SIG chantier Penly : démonstrateur open data")
+    projet.setTitle("SIG chantier : démonstrateur open data")
     k = Constructeur(projet)
 
     # 1 · PIC ---------------------------------------------------------------
@@ -216,7 +216,7 @@ def construire(projet):
 
     # 2 · zonages -------------------------------------------------------------
     g = k.groupe("2 · Zonages d'étude", ouvert=True)
-    cnpe = k.vecteur(g, "zon_cnpe_penly", "CNPE de Penly")
+    cnpe = k.vecteur(g, "zon_cnpe", "CNPE de Penly")
     symbole_unique(cnpe, point("star", "#d7191c", 7, "#ffffff", 0.4))
     etiquettes(cnpe, "'CNPE de Penly'", 10, "#a50f15", gras=True)
     cer = k.vecteur(g, "zon_cercles", "Cercles 2 / 5 / 10 / 20 km")
@@ -332,8 +332,8 @@ def construire(projet):
 
     # 8 · tables de production ----------------------------------------------------------
     g = k.groupe("8 · Tables de production (sans géométrie)")
-    for t, a in [("tab_indisponibilites_penly", "Indisponibilités Penly (en cours)"),
-                 ("tab_indisponibilites_penly_hist", "Indisponibilités Penly (historique depuis 2015)"),
+    for t, a in [("tab_indisponibilites", "Indisponibilités Penly (en cours)"),
+                 ("tab_indisponibilites_hist", "Indisponibilités Penly (historique depuis 2015)"),
                  ("tab_historique_productions", "Productions nationales depuis 1948"),
                  ("tab_disponibilite_parc_nucleaire", "Disponibilité du parc nucléaire"),
                  ("tab_seuils_rejets_thermiques", "Seuils de rejets thermiques")]:
@@ -386,7 +386,7 @@ def mise_en_page(projet, k):
     leg.setAutoUpdateModel(False)
     racine = leg.model().rootGroup()
     racine.removeAllChildren()
-    for t in ["zon_cnpe_penly", "zon_cercles", "prod_registre_installations", "res_htb_postes", "res_htb_lignes",
+    for t in ["zon_cnpe", "zon_cercles", "prod_registre_installations", "res_htb_postes", "res_htb_lignes",
               "res_postes_hta_bt", "res_hta_aerien", "res_hta_souterrain", "env_icpe", "env_conservatoire_littoral",
               "env_natura2000_zps", "env_natura2000_zsc_sic", "env_znieff1", "env_znieff2", "ref_voies_ferrees", "ref_cours_eau"]:
         racine.addLayer(k.c[t])

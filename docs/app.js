@@ -1,4 +1,4 @@
-/* SIG chantier Penly : carte web (MapLibre GL JS, sans compilation).
+/* SIG chantier : carte web (MapLibre GL JS, sans compilation).
    Données : docs/data/*.geojson, produites par scripts/05_exporter_web.py. */
 "use strict";
 

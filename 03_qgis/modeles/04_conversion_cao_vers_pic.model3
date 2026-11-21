@@ -486,13 +486,13 @@
   <Option name="designerParameterValues"/>
   <Option name="groupBoxes"/>
   <Option name="help" type="Map">
-    <Option value="SIG chantier Penly" name="ALG_CREATOR" type="QString"/>
+    <Option value="SIG chantier" name="ALG_CREATOR" type="QString"/>
     <Option value="Intègre un plan CAO (DXF exporté d'AutoCAD/MicroStation) dans le modèle de données du PIC. Convention : les polylignes fermées des zones sont dessinées sur des calques PIC_ZONE_&lt;TYPE> (ex. PIC_ZONE_BASE_VIE, PIC_ZONE_STOCKAGE) ; le suffixe donne le type de zone. Étapes : système de coordonnées du plan, filtre des calques, polylignes -> polygones, correction des géométries, Lambert-93, puis restructuration au schéma de la couche pic_zone (source = CAO)." name="ALG_DESC" type="QString"/>
     <Option value="1.0" name="ALG_VERSION" type="QString"/>
   </Option>
   <Option value="Version2" name="internal_version" type="QString"/>
   <Option name="modelVariables"/>
-  <Option value="SIG chantier Penly" name="model_group" type="QString"/>
+  <Option value="SIG chantier" name="model_group" type="QString"/>
   <Option value="04 · Conversion CAO (DXF) -> zones du PIC" name="model_name" type="QString"/>
   <Option value="" name="outputGroup" type="QString"/>
   <Option name="outputOrder"/>

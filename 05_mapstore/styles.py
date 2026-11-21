@@ -112,47 +112,47 @@ def sld(nom, *regles):
 # ---------------------------------------------------------------- Styles
 def styles():
     s = {}
-    s["penly_cnpe"] = sld("penly_cnpe", regle(
+    s["cnpe"] = sld("cnpe", regle(
         "CNPE de Penly",
         marque("circle", 20, PAPIER, ENCRE, 1.6), marque("circle", 9, CARMIN),
         texte("nom", 14, ENCRE, "italic", "bold", ancre=(0, 0.5), decalage=(16, 0))))
-    s["penly_cercles"] = sld("penly_cercles", regle(
+    s["cercles"] = sld("cercles", regle(
         "Cercles de 2, 5, 10 et 20 km autour du CNPE",
         polygone(contour=ENCRE, largeur=1.2, tirets="8 5"),
         texte("etiquette", 12, ENCRE, poids="600", geom="geom_etiquette", cadre=True)))
-    s["penly_htb_lignes"] = sld(
-        "penly_htb_lignes",
+    s["htb_lignes"] = sld(
+        "htb_lignes",
         regle("Ligne 400 kV", ligne(PAPIER, 8, 0.85, bout="round"), ligne(CARMIN, 4.2, bout="round"),
               filtre=entre("tension_kv", 300)),
         regle("Ligne 90 kV", ligne(PAPIER, 5.5, 0.85, bout="round"), ligne(CARMIN, 2.4, bout="round"),
               filtre=entre("tension_kv", None, 300)))
-    s["penly_htb_postes"] = sld("penly_htb_postes", regle(
+    s["htb_postes"] = sld("htb_postes", regle(
         "Poste électrique HTB", polygone(CARMIN, 0.28, CARMIN, 1.4)))
-    s["penly_htb_pylones"] = sld("penly_htb_pylones", regle(
+    s["htb_pylones"] = sld("htb_pylones", regle(
         "Pylône", marque("square", 6, PAPIER, CARMIN, 1.2), echelle_max=46000))
-    s["penly_hta"] = sld(
-        "penly_hta",
+    s["hta"] = sld(
+        "hta",
         regle("HTA aérienne", ligne(BLEU, 1.6), filtre=egal("pose", "aérienne")),
         regle("HTA souterraine", ligne(BLEU, 1.5, tirets="5 3"), filtre=egal("pose", "souterraine")))
-    s["penly_bt"] = sld(
-        "penly_bt",
+    s["bt"] = sld(
+        "bt",
         regle("BT aérienne", ligne(BLEU, 0.9, 0.75), filtre=egal("pose", "aérienne"), echelle_max=23000),
         regle("BT souterraine", ligne(BLEU, 0.9, 0.75, tirets="2 2"), filtre=egal("pose", "souterraine"),
               echelle_max=23000))
-    s["penly_postes_hta_bt"] = sld("penly_postes_hta_bt", regle(
+    s["postes_hta_bt"] = sld("postes_hta_bt", regle(
         "Poste HTA/BT", marque("triangle", 9, PAPIER, BLEU, 1.4), echelle_max=33000))
-    s["penly_poteaux"] = sld("penly_poteaux", regle(
+    s["poteaux"] = sld("poteaux", regle(
         "Poteau HTA ou BT", marque("circle", 4, BLEU, PAPIER, 0.6), echelle_max=8200))
-    s["penly_production"] = sld(
-        "penly_production",
+    s["production"] = sld(
+        "production",
         *(regle(titre, marque("circle", taille, PAPIER, ENCRE, 1.3, opacite=0.6), filtre=entre("puissance_kw", a, b))
           for titre, taille, a, b in [("moins de 100 kW", 7, None, 100), ("100 kW à 1 MW", 10, 100, 1000),
                                       ("1 à 10 MW", 14, 1000, 10000), ("10 à 100 MW", 19, 10000, 100000),
                                       ("plus de 100 MW (CNPE compris)", 28, 100000, None)]))
     douteuse = ("<ogc:Filter><ogc:PropertyIsEqualTo><ogc:PropertyName>position_douteuse</ogc:PropertyName>"
                 "<ogc:Literal>true</ogc:Literal></ogc:PropertyIsEqualTo></ogc:Filter>")
-    s["penly_icpe"] = sld(
-        "penly_icpe",
+    s["icpe"] = sld(
+        "icpe",
         regle("Autorisation", marque("square", 9, ENCRE, PAPIER, 0.8, rotation=45), filtre=egal("regime", "A")),
         regle("Enregistrement", marque("square", 9, PAPIER, ENCRE, 1.4, rotation=45), filtre=egal("regime", "E")),
         regle("Autre régime ou non classé", marque("circle", 5, ENCRE_3, PAPIER, 0.6),
@@ -163,23 +163,23 @@ def styles():
         regle("Position douteuse",  # titre court : une légende large est réduite dans la table des matières
               "<PointSymbolizer><Graphic><Mark><WellKnownName>circle</WellKnownName>"
               f"{trait(CARMIN, 1.8)}</Mark><Size>17</Size></Graphic></PointSymbolizer>", filtre=douteuse))
-    s["penly_znieff1"] = sld("penly_znieff1", regle("ZNIEFF de type I", polygone(VERT, 0.25, VERT_FONCE, 1)))
-    s["penly_znieff2"] = sld("penly_znieff2", regle("ZNIEFF de type II", polygone(VERT, 0.08, VERT, 1.2, tirets="7 4")))
-    s["penly_natura2000_zsc"] = sld("penly_natura2000_zsc", regle(
+    s["znieff1"] = sld("znieff1", regle("ZNIEFF de type I", polygone(VERT, 0.25, VERT_FONCE, 1)))
+    s["znieff2"] = sld("znieff2", regle("ZNIEFF de type II", polygone(VERT, 0.08, VERT, 1.2, tirets="7 4")))
+    s["natura2000_zsc"] = sld("natura2000_zsc", regle(
         "Natura 2000, directive Habitats (ZSC)", polygone(contour=VERT_FONCE, largeur=1.3, motif=hachure(VERT_FONCE, "slash"))))
-    s["penly_natura2000_zps"] = sld("penly_natura2000_zps", regle(
+    s["natura2000_zps"] = sld("natura2000_zps", regle(
         "Natura 2000, directive Oiseaux (ZPS)",
         polygone(contour=VERT_FONCE, largeur=1.3, tirets="9 4", motif=hachure(VERT_FONCE, "backslash", 12, 0.8))))
-    s["penly_conservatoire"] = sld("penly_conservatoire", regle(
+    s["conservatoire"] = sld("conservatoire", regle(
         "Conservatoire du littoral", polygone(SEPIA, 0.32, SEPIA, 1.1)))
-    s["penly_communes"] = sld(
-        "penly_communes",
+    s["communes"] = sld(
+        "communes",
         regle("Limite communale", polygone(contour=ENCRE_3, largeur=0.8, tirets="4 3")),
         regle("", texte("nom", 12, ENCRE_2, "italic"), echelle_max=150000))
-    s["penly_batiments"] = sld("penly_batiments", regle(
+    s["batiments"] = sld("batiments", regle(
         "Bâtiment", polygone(FILET, 1, "#b9ae9d", 0.5), echelle_max=20000))
-    s["penly_parcelles"] = sld(
-        "penly_parcelles",
+    s["parcelles"] = sld(
+        "parcelles",
         regle("Parcelle cadastrale", polygone(contour=SEPIA, largeur=0.6), echelle_max=12000),
         regle("", texte("numero", 9, ENCRE_3, halo=PAPIER), echelle_max=3500))
     return s

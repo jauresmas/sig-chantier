@@ -1,13 +1,13 @@
 # Publication MapStore
 
-Les couches du SIG chantier Penly publiées comme dans un SIG d'entreprise : base **PostGIS**, services **GeoServer**
+Les couches du SIG chantier publiées comme dans un SIG d'entreprise : base **PostGIS**, services **GeoServer**
 (WMS, WFS, styles SLD), puis carte et application dédiée dans **MapStore**.
 
-![Application MapStore « SIG chantier Penly » : carte des contraintes et fiche de présentation](images/application.png)
+![Application MapStore « SIG chantier » : carte des contraintes et fiche de présentation](images/application.png)
 
 ## Ce qui est publié
 
-- **19 couches** en Lambert-93 dans le schéma `carto` de la base `penly_carto`, reprojetées par GeoServer pour MapStore.
+- **19 couches** en Lambert-93 dans le schéma `carto` de la base `sig_chantier`, reprojetées par GeoServer pour MapStore.
 - **19 styles SLD** écrits en Python (`styles.py`) avec la charte de la carte web : encre sépia, carmin pour le
   transport HTB, bleu pour la distribution, vert pour l'environnement. Les couches denses (pylônes, réseau BT,
   poteaux, bâtiments, parcelles) n'apparaissent qu'à partir d'une échelle donnée ; les légendes reprennent les
@@ -34,10 +34,10 @@ tombe à Sauchay, sa distance au CNPE est donc marquée non fiable et le symbole
   le `.env` de cette pile, dont le dossier est donné par `MAPSTORE_PILE`.
 - QGIS 3.34 (pour `ogr2ogr`), Python 3.11 ou plus (bibliothèque standard seulement), Node 22 et Edge ou Chrome pour
   les captures.
-- Le GeoPackage `02_donnees/penly_sig.gpkg`, reconstruit par `scripts/02_construire_gpkg.py`.
+- Le GeoPackage `02_donnees/sig_chantier.gpkg`, reconstruit par `scripts/02_construire_gpkg.py`.
 
 Copier `.env.example` en `.env` et renseigner `MAPSTORE_PILE`. Aucun mot de passe n'est écrit dans les scripts
-ni affiché : le rôle PostgreSQL `penly` reçoit un mot de passe tiré au hasard, rangé dans `.env` (ignoré par git).
+ni affiché : le rôle PostgreSQL `sig_chantier` reçoit un mot de passe tiré au hasard, rangé dans `.env` (ignoré par git).
 
 ## Rejouer la chaîne
 
@@ -65,10 +65,10 @@ node 05_mapstore\captures.mjs
 
 | Fichier | Rôle |
 |---|---|
-| `00_creer_base.py`, `sql/creer_base.sql` | rôle `penly`, base `penly_carto` (PostGIS, unaccent), schémas `brut` et `carto` ; à lancer une fois |
+| `00_creer_base.py`, `sql/creer_base.sql` | rôle `sig_chantier`, base `sig_chantier` (PostGIS, unaccent), schémas `brut` et `carto` ; à lancer une fois |
 | `01_charger_postgis.py` | importe 22 couches du GeoPackage dans `brut` (ogr2ogr, 2D), puis lance `sql/carto.sql` |
 | `sql/carto.sql` | tables de la carte : libellés français, longueurs et distances au CNPE en texte, tension HTB, réseaux aérien et souterrain réunis, production regroupée par commune, contrôle de position des ICPE (commune déclarée contre commune du point) ; clé primaire, index spatial |
-| `02_publier_geoserver.py` | espace de travail `penly`, entrepôt PostGIS `carto`, styles SLD, couches avec titre, résumé et attribution |
+| `02_publier_geoserver.py` | espace de travail `sig_chantier`, entrepôt PostGIS `carto`, styles SLD, couches avec titre, résumé et attribution |
 | `styles.py` | les 19 styles SLD (palette, échelles d'affichage, étiquettes encadrées des cercles) |
 | `catalogue.py` | une seule liste des couches pour GeoServer et MapStore : titre, résumé, groupe, visibilité, fiche au clic |
 | `03_publier_mapstore.py` | carte, fiche de présentation, vignette et application dans MapStore (API GeoStore), droits de lecture publics, `adresses.json` |
@@ -76,5 +76,5 @@ node 05_mapstore\captures.mjs
 | `captures.mjs` | captures d'écran de l'application (`images/`), par Edge ou Chrome sans fenêtre |
 
 Adresses une fois publié (les identifiants dépendent de l'instance, `python 05_mapstore\03_publier_mapstore.py adresses`
-les affiche) : application `http://localhost:8097/mapstore/#/context/sig-chantier-penly/<id>`, carte
+les affiche) : application `http://localhost:8097/mapstore/#/context/sig-chantier/<id>`, carte
 `http://localhost:8097/mapstore/#/viewer/<id>`.

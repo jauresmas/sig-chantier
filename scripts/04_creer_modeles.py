@@ -30,9 +30,9 @@ from qgis.PyQt.QtGui import QFont, QFontMetricsF
 
 RACINE = Path(__file__).resolve().parent.parent
 MODELES = RACINE / "03_qgis" / "modeles"
-GPKG = (RACINE / "02_donnees" / "penly_sig.gpkg").as_posix()
+GPKG = (RACINE / "02_donnees" / "sig_chantier.gpkg").as_posix()
 DXF = RACINE / "04_cao" / "exemple_fictif_PIC.dxf"
-AUTEUR = "SIG chantier Penly"
+AUTEUR = "SIG chantier"
 LARGEUR = 200  # largeur par défaut d'une boîte du Modeleur
 
 
@@ -47,7 +47,7 @@ def taille(libelle):
 
 class Modele:
     def __init__(self, nom, aide):
-        self.m = QgsProcessingModelAlgorithm(nom, "SIG chantier Penly")
+        self.m = QgsProcessingModelAlgorithm(nom, "SIG chantier")
         self.m.setHelpContent({"ALG_DESC": aide, "ALG_CREATOR": AUTEUR, "ALG_VERSION": "1.0"})
 
     def entree(self, param, x, y):
@@ -308,7 +308,7 @@ def tester(modeles):
 
     m1, m2, m3, m4 = [m for _, m in modeles]
     print("  01 intégration :", run(m1, {"url": m1.parameterDefinition("url").defaultValue()}))
-    print("  02 zonages     :", run(m2, {"site": f"{GPKG}|layername=zon_cnpe_penly",
+    print("  02 zonages     :", run(m2, {"site": f"{GPKG}|layername=zon_cnpe",
                                          "rayon_1": 2000, "rayon_2": 5000, "rayon_3": 10000, "rayon_4": 20000}, ["rayon_km"]))
     print("  03 contraintes :", run(m3, {
         "emprise": f"{GPKG}|layername=zon_cercles|subset=\"rayon_km\" = 2",

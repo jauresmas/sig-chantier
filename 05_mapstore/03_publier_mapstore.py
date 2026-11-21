@@ -1,4 +1,4 @@
-"""Étape 3 : publie dans MapStore la carte du SIG chantier Penly et son application dédiée (contexte).
+"""Étape 3 : publie dans MapStore la carte du SIG chantier et son application dédiée (contexte).
 
 Carte : couches WMS du GeoServer de la pile (02_publier_geoserver.py), groupées comme la carte web, fonds IGN,
 signets, fiches au clic, fiche de présentation et vignette. Application : visualiseur MapStore aux couleurs du
@@ -17,7 +17,7 @@ from commun import ENTREPOT, ESPACE, ICI, MAPSTORE, geoserver, mapstore
 from ressources import Ressources
 from textes import PRESENTATION_CARTE
 
-NOM_CARTE = "SIG chantier Penly · carte"
+NOM_CARTE = "SIG chantier · carte"
 COUCHES_VIGNETTE = ["communes", "znieff1", "natura2000_zsc", "natura2000_zps", "conservatoire", "hta",
                     "htb_lignes", "htb_postes", "production", "icpe", "cercles", "cnpe"]
 
@@ -46,8 +46,8 @@ def publier_carte(r, e):
 def publier_application(r, conf, attributs_carte, carte_id):
     donnees = application.contexte(conf, carte_id)
     rid = r.enregistrer("CONTEXT", application.NOM,
-                        "Application cartographique dédiée : SIG chantier Penly, contraintes autour du CNPE.",
-                        donnees, {"thumbnail": attributs_carte["thumbnail"], "title": "SIG chantier Penly"})
+                        "Application cartographique dédiée : SIG chantier, contraintes autour du CNPE.",
+                        donnees, {"thumbnail": attributs_carte["thumbnail"], "title": "SIG chantier"})
     print(f"application {rid} : #/context/{application.NOM}/{carte_id}")
     return rid
 

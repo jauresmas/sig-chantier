@@ -9,7 +9,7 @@ web
 ## Stack
 
 Site statique sans compilation : HTML, CSS et JavaScript, carte avec MapLibre GL JS (bibliothèque chargée depuis un CDN).
-Données servies en GeoJSON depuis le dépôt. Déploiement : GitHub Pages, dépôt public `sig-chantier-penly`.
+Données servies en GeoJSON depuis le dépôt. Déploiement : GitHub Pages, dépôt public `sig-chantier`.
 Le reste du projet (préparation des données, projet QGIS, modèles du Modeleur) reste en Python / PyQGIS.
 
 ## Users
@@ -35,7 +35,7 @@ modèle QGIS versionnés dans le même dépôt. La carte web est la vitrine d'un
 
 ## Operating Context
 
-- Données : `02_donnees/penly_sig.gpkg` (Lambert-93), sources listées dans `01_donnees_brutes/manifeste.json`.
+- Données : `02_donnees/sig_chantier.gpkg` (Lambert-93), sources listées dans `01_donnees_brutes/manifeste.json`.
 - Outils de l'auteur : QGIS 3.34, PostGIS, GeoServer et MapStore (pile Docker locale), Python.
 - La carte web est autonome : elle ne dépend pas du GeoServer local et fonctionne sur GitHub Pages.
 
@@ -53,7 +53,7 @@ modèle QGIS versionnés dans le même dépôt. La carte web est la vitrine d'un
 
 ## Brand Commitments
 
-- Nom du projet : « SIG chantier Penly » (dépôt `sig-chantier-penly`).
+- Nom du projet : « SIG chantier » (dépôt `sig-chantier`).
 - Aucune marque, logo ou charte d'exploitant ou d'industriel : le projet n'est affilié à aucune entreprise.
   Les producteurs de données (EDF, Enedis, Agence ORE, IGN, PatriNat, Géorisques, DGFiP) apparaissent uniquement
   comme sources, comme l'exige la Licence Ouverte Etalab 2.0.

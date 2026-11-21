@@ -628,13 +628,13 @@
   <Option name="designerParameterValues"/>
   <Option name="groupBoxes"/>
   <Option name="help" type="Map">
-    <Option value="SIG chantier Penly" name="ALG_CREATOR" type="QString"/>
+    <Option value="SIG chantier" name="ALG_CREATOR" type="QString"/>
     <Option value="Croise une emprise de chantier (zone du PIC, cercle d'étude...) avec : (1) les lignes électriques aériennes HTB/HTA élargies d'une distance de vigilance (engins de levage), (2) les réseaux souterrains à déclarer (DT-DICT), (3) les zones naturelles protégées (ZNIEFF, Natura 2000, Conservatoire du littoral). Chaque résultat porte le nom de la couche d'origine (champ « layer ») et sa surface." name="ALG_DESC" type="QString"/>
     <Option value="1.0" name="ALG_VERSION" type="QString"/>
   </Option>
   <Option value="Version2" name="internal_version" type="QString"/>
   <Option name="modelVariables"/>
-  <Option value="SIG chantier Penly" name="model_group" type="QString"/>
+  <Option value="SIG chantier" name="model_group" type="QString"/>
   <Option value="03 · Contraintes d'une emprise de chantier" name="model_name" type="QString"/>
   <Option value="" name="outputGroup" type="QString"/>
   <Option name="outputOrder"/>
