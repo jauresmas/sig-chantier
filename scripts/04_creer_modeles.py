@@ -25,13 +25,24 @@ from qgis.core import (
     QgsProcessingParameterMultipleLayers, QgsProcessingParameterNumber, QgsProcessingParameterString,
     QgsProcessingModelComment,
 )
-from qgis.PyQt.QtCore import QPointF
+from qgis.PyQt.QtCore import QPointF, QSizeF
+from qgis.PyQt.QtGui import QFont, QFontMetricsF
 
 RACINE = Path(__file__).resolve().parent.parent
 MODELES = RACINE / "03_qgis" / "modeles"
 GPKG = (RACINE / "02_donnees" / "penly_sig.gpkg").as_posix()
 DXF = RACINE / "04_cao" / "exemple_fictif_PIC.dxf"
 AUTEUR = "SIG chantier Penly"
+LARGEUR = 200  # largeur par défaut d'une boîte du Modeleur
+
+
+def taille(libelle):
+    """Boîte du Modeleur à la mesure de son libellé : le Modeleur écrit en 12 px après 25 px d'icône ; une boîte
+    de 30 de haut ne tient qu'une ligne, un libellé plus long passe sur deux lignes dans une boîte de 44."""
+    police = QFont()
+    police.setPixelSize(12)
+    tient = QFontMetricsF(police).horizontalAdvance(libelle) <= LARGEUR - 46  # mesuré : 151 px tient, 157 px passe à la ligne
+    return QSizeF(LARGEUR, 30 if tient else 44)
 
 
 class Modele:
@@ -43,6 +54,7 @@ class Modele:
         mp = QgsProcessingModelParameter(param.name())
         mp.setPosition(QPointF(x, y))
         mp.setDescription(param.description())
+        mp.setSize(taille(param.description()))
         self.m.addModelParameter(param, mp)
 
     def etape(self, cid, alg, desc, params, x, y, sorties=None, commentaire=None):
@@ -50,6 +62,7 @@ class Modele:
         c.setChildId(cid)
         c.setDescription(desc)
         c.setPosition(QPointF(x, y))
+        c.setSize(taille(desc))
         for k, v in params.items():
             c.addParameterSources(k, v if isinstance(v, list) else [v])
         if sorties:
@@ -60,11 +73,13 @@ class Modele:
                 o.setChildId(cid)
                 o.setChildOutputName(nom_sortie)
                 o.setPosition(QPointF(x + 190, y + 70))
+                o.setSize(taille(libelle))
                 outs[ident] = o
             c.setModelOutputs(outs)
         if commentaire:
             com = QgsProcessingModelComment(commentaire)
             com.setPosition(QPointF(x + 200, y - 50))
+            com.setSize(QSizeF(190, 40))  # note sur deux lignes au lieu d'une colonne étroite
             c.setComment(com)
         self.m.addChildAlgorithm(c)
 
@@ -104,21 +119,23 @@ def modele_zonages():
                "chantier, zone rapprochée, zone élargie, rayon du PPI) en Lambert-93, avec le champ rayon_km. "
                "Équivalent graphique de la fonction zonages() du script 02.")
     k.entree(QgsProcessingParameterFeatureSource("site", "Site (point)", [QgsProcessing.TypeVectorPoint]), 60, 60)
-    for i, (d, y) in enumerate([(2000, 140), (5000, 200), (10000, 260), (20000, 320)], 1):
-        k.entree(QgsProcessingParameterNumber(f"rayon_{i}", f"Rayon {i} (m)", QgsProcessingParameterNumber.Double, d, minValue=0), 60, y)
+    # une ligne par rayon : l'entrée et son tampon sur la même horizontale, 80 d'écart pour les étiquettes In / Out
+    for i, d in enumerate([2000, 5000, 10000, 20000], 1):
+        k.entree(QgsProcessingParameterNumber(f"rayon_{i}", f"Rayon {i} (m)", QgsProcessingParameterNumber.Double, d, minValue=0),
+                 60, 130 + i * 80)
     k.etape("reprojeter", "native:reprojectlayer", "Reprojeter en Lambert-93",
             {"INPUT": P("site"), "TARGET_CRS": S(L93)}, 320, 60)
     for i in range(1, 5):
         k.etape(f"tampon_{i}", "native:buffer", f"Tampon rayon {i}",
                 {"INPUT": C("reprojeter", "OUTPUT"), "DISTANCE": P(f"rayon_{i}"), "SEGMENTS": S(64),
                  "END_CAP_STYLE": S(0), "JOIN_STYLE": S(0), "MITER_LIMIT": S(2), "DISSOLVE": S(False)},
-                320 + (i - 1) * 40, 130 + i * 60)
+                320, 130 + i * 80)
     k.etape("fusion", "native:mergevectorlayers", "Fusionner les cercles",
-            {"LAYERS": [C(f"tampon_{i}", "OUTPUT") for i in range(1, 5)], "CRS": S(L93)}, 600, 300)
+            {"LAYERS": [C(f"tampon_{i}", "OUTPUT") for i in range(1, 5)], "CRS": S(L93)}, 600, 330)
     k.etape("rayon", "native:fieldcalculator", "Calculer rayon_km",
             {"INPUT": C("fusion", "OUTPUT"), "FIELD_NAME": S("rayon_km"), "FIELD_TYPE": S(0), "FIELD_LENGTH": S(10),
              "FIELD_PRECISION": S(1), "FORMULA": S("round(sqrt($area / pi()) / 1000, 1)")},
-            600, 410, sorties={"OUTPUT": "Cercles d'étude"},
+            600, 450, sorties={"OUTPUT": "Cercles d'étude"},
             commentaire="rayon retrouvé depuis la surface du cercle")
     return k.enregistrer("02_zonages_etude.model3")
 
@@ -308,7 +325,7 @@ def tester(modeles):
 
 
 if __name__ == "__main__":
-    app = QgsApplication([], False)
+    app = QgsApplication([], True)  # interface graphique : la mesure des libellés demande les polices
     app.initQgis()
     initialiser_traitements()
     modeles = [modele_integration(), modele_zonages(), modele_contraintes(), modele_cao()]

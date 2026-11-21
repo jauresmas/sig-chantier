@@ -42,7 +42,7 @@ puis http://localhost:8000.
 sig-chantier-penly/
 ├── README.md
 ├── PRODUCT.md                  contexte produit de la carte web
-├── 00_docs/                    documentation (fiches de contrôle qualité, notes)
+├── 00_docs/                    documentation ; modeles/ : images des 4 modèles du Modeleur
 ├── 01_donnees_brutes/          téléchargements bruts par source (non versionnés) + manifeste.json (URL, date, licence)
 ├── 02_donnees/
 │   ├── penly_sig.gpkg          29 couches + 5 tables, Lambert-93 (non versionné, reconstruit par le script 02)
@@ -81,6 +81,10 @@ python scripts\01_telecharger_donnees.py
 & "C:\Program Files\QGIS 3.34.12\bin\python-qgis-ltr.bat" scripts\05_exporter_web.py
 ```
 
+```powershell
+& "C:\Program Files\QGIS 3.34.12\bin\python-qgis-ltr.bat" scripts\06_capturer_modeles.py
+```
+
 | Script | Rôle |
 |---|---|
 | `01_telecharger_donnees.py` | interroge les API (Data Fair EDF / Enedis / ORE / Koumoul, WFS Géoplateforme, cadastre Etalab) sur l'emprise de 20 km ; corrige l'encodage des données EDF (« NuclÃ©aire » devient « Nucléaire ») ; écrit le manifeste |
@@ -88,6 +92,7 @@ python scripts\01_telecharger_donnees.py
 | `03_projet_qgis.py` | groupes, symbologie (HTB par tension, ICPE par régime…), formulaires PIC avec listes de valeurs, fonds IGN, mise en page A3 et export PDF / PNG ; lançable aussi dans la console Python de QGIS |
 | `04_creer_modeles.py` | génère les 4 modèles du Modeleur, un DXF d'exemple fictif, puis teste chaque modèle sur les données |
 | `05_exporter_web.py` | exporte les couches de la carte web en GeoJSON WGS84 allégé (champs renommés, géométries simplifiées et découpées), calcule la distance de chaque objet au CNPE et le bilan par anneau, contrôle la position des ICPE, dérive un masque de mer (emprise des communes moins leur union) pour le fond orthophoto |
+| `06_capturer_modeles.py` | rend chaque modèle du Modeleur en image PNG (comme « Exporter en image ») dans `00_docs/modeles/`, QGIS fermé |
 
 ## Données
 
@@ -141,6 +146,24 @@ Ils sont aussi copiés dans la boîte à outils du profil QGIS : *Boîte à outi
 | 02 · Zonages d'étude autour d'un site | point + 4 rayons (2, 5, 10, 20 km par défaut) | cercles avec `rayon_km` | 4 cercles (2 / 5 / 10 / 20) |
 | 03 · Contraintes d'une emprise de chantier | emprise, lignes aériennes, distance de vigilance, réseaux souterrains, zones protégées | emprise sous lignes aériennes, réseaux souterrains à déclarer (DT-DICT), emprise en zone protégée | sur le cercle de 2 km : 9 / 244 / 7 objets |
 | 04 · Conversion CAO (DXF) vers zones du PIC | DXF, SCR du plan, préfixe de calque, référence du plan | polygones au schéma `pic_zone` | 4 zones typées depuis le DXF fictif |
+
+Les modèles tels qu'ils s'affichent dans le Modeleur graphique (entrées en jaune, sorties en vert) :
+
+### 01 · Intégrer une couche open data
+
+![Modèle 01 : URL GeoJSON, téléchargement, reprojection en Lambert-93, géométries multiples](00_docs/modeles/01_integrer_couche_open_data.png)
+
+### 02 · Zonages d'étude autour d'un site
+
+![Modèle 02 : site ponctuel et quatre rayons, un tampon par rayon, fusion des cercles, calcul de rayon_km](00_docs/modeles/02_zonages_etude.png)
+
+### 03 · Contraintes d'une emprise de chantier
+
+![Modèle 03 : emprise croisée avec les lignes aériennes élargies, les réseaux souterrains et les zones protégées](00_docs/modeles/03_contraintes_emprise_chantier.png)
+
+### 04 · Conversion CAO (DXF) vers zones du PIC
+
+![Modèle 04 : DXF, système du plan, filtre des calques PIC_ZONE_, polygones, Lambert-93, schéma pic_zone](00_docs/modeles/04_conversion_cao_vers_pic.png)
 
 Convention CAO : les zones sont des polylignes fermées sur des calques `PIC_ZONE_<TYPE>` (ex. `PIC_ZONE_BASE_VIE`) ;
 le suffixe devient le champ `type_zone`. Le résultat se colle ensuite dans `pic_zone`.
