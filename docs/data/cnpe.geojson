@@ -1,0 +1,1 @@
+{"type":"FeatureCollection","features":[{"type":"Feature","id":1,"properties":{"nom":"CNPE de Penly (tranches 1-2 en service, tranches 3-4 en projet)","source":"opendata.edf.fr, centrales de production nucléaire","dist_cnpe_m":0},"geometry":{"type":"Point","coordinates":[1.210236,49.976144]}}]}

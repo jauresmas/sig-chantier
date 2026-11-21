@@ -1,0 +1,21 @@
+# Données brutes : volumineuses, rejouables avec scripts/01_telecharger_donnees.py
+01_donnees_brutes/**
+!01_donnees_brutes/manifeste.json
+
+# Base reconstruite par scripts/02_construire_gpkg.py
+02_donnees/penly_sig.gpkg
+02_donnees/*.gpkg-wal
+02_donnees/*.gpkg-shm
+
+# Fichiers de travail
+__pycache__/
+*.pyc
+*.qgz~
+*.qgs~
+*.aux.xml
+
+# Impeccable : fichiers d'exécution (maquettes, captures de revue)
+.impeccable/questions/
+.impeccable/mocks/
+.impeccable/review/
+.impeccable/build/

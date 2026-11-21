@@ -1,0 +1,246 @@
+{
+ "nom": "CNPE de Penly",
+ "commune": "Petit-Caux",
+ "departement": "Seine-Maritime (76)",
+ "centre": [
+  1.210236,
+  49.976144
+ ],
+ "centre_l93": [
+  571513,
+  6987855
+ ],
+ "tranches": [
+  {
+   "tranche": "PENLY 1",
+   "puissance_mw": 1330,
+   "mise_en_service": "1990-12-01",
+   "commune": "Petit-Caux"
+  },
+  {
+   "tranche": "PENLY 2",
+   "puissance_mw": 1330,
+   "mise_en_service": "1992-11-01",
+   "commune": "Petit-Caux"
+  }
+ ],
+ "emprise": [
+  0.8775,
+  49.7316,
+  1.5853,
+  50.2175
+ ],
+ "anneaux": {
+  "2": {
+   "cercles": {
+    "objets": 4
+   },
+   "cnpe": {
+    "objets": 1
+   },
+   "production": {
+    "objets": 0
+   },
+   "htb_lignes": {
+    "objets": 7,
+    "km": 4.1
+   },
+   "htb_postes": {
+    "objets": 4
+   },
+   "htb_pylones": {
+    "objets": 19
+   },
+   "hta": {
+    "objets": 36,
+    "km": 9.8
+   },
+   "postes_hta_bt": {
+    "objets": 18
+   },
+   "bt": {
+    "objets": 210,
+    "km": 16.5
+   },
+   "poteaux": {
+    "objets": 4
+   },
+   "znieff1": {
+    "objets": 2
+   },
+   "znieff2": {
+    "objets": 4
+   },
+   "natura2000": {
+    "objets": 1
+   },
+   "conservatoire": {
+    "objets": 0
+   },
+   "icpe": {
+    "objets": 3,
+    "positions_douteuses": 1
+   },
+   "communes": {
+    "objets": 1
+   }
+  },
+  "5": {
+   "cercles": {
+    "objets": 4
+   },
+   "cnpe": {
+    "objets": 1
+   },
+   "production": {
+    "objets": 0
+   },
+   "htb_lignes": {
+    "objets": 7,
+    "km": 15.2
+   },
+   "htb_postes": {
+    "objets": 4
+   },
+   "htb_pylones": {
+    "objets": 45
+   },
+   "hta": {
+    "objets": 189,
+    "km": 53.1
+   },
+   "postes_hta_bt": {
+    "objets": 91
+   },
+   "bt": {
+    "objets": 935,
+    "km": 67.1
+   },
+   "poteaux": {
+    "objets": 23
+   },
+   "znieff1": {
+    "objets": 4
+   },
+   "znieff2": {
+    "objets": 4
+   },
+   "natura2000": {
+    "objets": 1
+   },
+   "conservatoire": {
+    "objets": 1
+   },
+   "icpe": {
+    "objets": 9,
+    "positions_douteuses": 1
+   },
+   "communes": {
+    "objets": 2
+   }
+  },
+  "10": {
+   "cercles": {
+    "objets": 4
+   },
+   "cnpe": {
+    "objets": 1
+   },
+   "production": {
+    "objets": 24
+   },
+   "htb_lignes": {
+    "objets": 13,
+    "km": 47.5
+   },
+   "htb_postes": {
+    "objets": 5
+   },
+   "htb_pylones": {
+    "objets": 126
+   },
+   "hta": {
+    "objets": 898,
+    "km": 283.6
+   },
+   "postes_hta_bt": {
+    "objets": 347
+   },
+   "bt": {
+    "objets": 3641,
+    "km": 250.1
+   },
+   "poteaux": {
+    "objets": 880
+   },
+   "znieff1": {
+    "objets": 20
+   },
+   "znieff2": {
+    "objets": 7
+   },
+   "natura2000": {
+    "objets": 4
+   },
+   "conservatoire": {
+    "objets": 2
+   },
+   "icpe": {
+    "objets": 43,
+    "positions_douteuses": 6
+   },
+   "communes": {
+    "objets": 16
+   }
+  },
+  "20": {
+   "cercles": {
+    "objets": 4
+   },
+   "cnpe": {
+    "objets": 1
+   },
+   "production": {
+    "objets": 67
+   },
+   "htb_lignes": {
+    "objets": 29,
+    "km": 126.5
+   },
+   "htb_postes": {
+    "objets": 8
+   },
+   "htb_pylones": {
+    "objets": 353
+   },
+   "hta": {
+    "objets": 4055,
+    "km": 1090.4
+   },
+   "postes_hta_bt": {
+    "objets": 1518
+   },
+   "bt": null,
+   "poteaux": null,
+   "znieff1": {
+    "objets": 83
+   },
+   "znieff2": {
+    "objets": 16
+   },
+   "natura2000": {
+    "objets": 9
+   },
+   "conservatoire": {
+    "objets": 5
+   },
+   "icpe": {
+    "objets": 242,
+    "positions_douteuses": 18
+   },
+   "communes": {
+    "objets": 83
+   }
+  }
+ }
+}

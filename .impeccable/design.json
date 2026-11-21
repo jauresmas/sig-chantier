@@ -1,0 +1,556 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-21T03:45:58+00:00",
+  "title": "Design System: SIG chantier Penly",
+  "extensions": {
+    "colorMeta": {
+      "encre": {
+        "role": "neutral",
+        "displayName": "Encre sépia",
+        "canonical": "oklch(27.1% 0.021 54)",
+        "tonalRamp": [
+          "#0e0a08",
+          "#2a2420",
+          "#49403a",
+          "#6a5f57",
+          "#8c8078",
+          "#ada39c",
+          "#d0c7c2",
+          "#f3edea"
+        ],
+        "cssVar": "--encre (aussi --bandeau)"
+      },
+      "encre-2": {
+        "role": "neutral",
+        "displayName": "Encre délavée",
+        "canonical": "oklch(42.2% 0.030 61)",
+        "tonalRamp": [
+          "#0f0a07",
+          "#2b231d",
+          "#4b3f36",
+          "#6d5e52",
+          "#8f7f72",
+          "#b0a297",
+          "#d2c7be",
+          "#f4ede7"
+        ]
+      },
+      "encre-3": {
+        "role": "neutral",
+        "displayName": "Encre pâle",
+        "canonical": "oklch(49.7% 0.030 63)",
+        "tonalRamp": [
+          "#0f0a07",
+          "#2b231d",
+          "#4b4036",
+          "#6d5e51",
+          "#8f7f72",
+          "#afa297",
+          "#d1c7be",
+          "#f4ede7"
+        ]
+      },
+      "papier": {
+        "role": "neutral",
+        "displayName": "Papier",
+        "canonical": "oklch(97.9% 0.007 89)",
+        "tonalRamp": [
+          "#0c0b0a",
+          "#262523",
+          "#43423f",
+          "#63615d",
+          "#84827e",
+          "#a6a5a1",
+          "#cac9c6",
+          "#efeeec"
+        ],
+        "cssVar": "--papier (aussi --bandeau-texte)"
+      },
+      "papier-2": {
+        "role": "neutral",
+        "displayName": "Papier teinté",
+        "canonical": "oklch(95.0% 0.013 87)",
+        "tonalRamp": [
+          "#0c0b09",
+          "#262521",
+          "#44423c",
+          "#64615a",
+          "#85827b",
+          "#a7a59f",
+          "#cbc9c4",
+          "#f0eeeb"
+        ]
+      },
+      "papier-3": {
+        "role": "neutral",
+        "displayName": "Papier ombré",
+        "canonical": "oklch(91.7% 0.019 86)",
+        "tonalRamp": [
+          "#0c0b08",
+          "#27251f",
+          "#45423a",
+          "#656157",
+          "#878277",
+          "#a9a59c",
+          "#ccc9c2",
+          "#f0eee9"
+        ]
+      },
+      "filet": {
+        "role": "neutral",
+        "displayName": "Filet",
+        "canonical": "oklch(86.3% 0.019 83)",
+        "tonalRamp": [
+          "#0d0b08",
+          "#28251f",
+          "#46413a",
+          "#666156",
+          "#878277",
+          "#a9a49b",
+          "#ccc9c1",
+          "#f1eee9"
+        ]
+      },
+      "carmin": {
+        "role": "primary",
+        "displayName": "Carmin",
+        "canonical": "oklch(56.4% 0.180 11)",
+        "tonalRamp": [
+          "#200005",
+          "#4a0318",
+          "#781530",
+          "#a92949",
+          "#d14f69",
+          "#eb8090",
+          "#ffaeb8",
+          "#ffdce3"
+        ]
+      },
+      "bleu": {
+        "role": "secondary",
+        "displayName": "Bleu de Prusse",
+        "canonical": "oklch(58.3% 0.092 250)",
+        "tonalRamp": [
+          "#020c19",
+          "#10263d",
+          "#244465",
+          "#3a648f",
+          "#5b86b3",
+          "#85a9ce",
+          "#b1ccea",
+          "#def1ff"
+        ]
+      },
+      "vert": {
+        "role": "tertiary",
+        "displayName": "Vert pré",
+        "canonical": "oklch(71.3% 0.088 131)",
+        "tonalRamp": [
+          "#060e02",
+          "#1c2a0f",
+          "#364923",
+          "#516b39",
+          "#718c59",
+          "#97ae84",
+          "#bed0b0",
+          "#e7f4dd"
+        ]
+      },
+      "vert-fonce": {
+        "role": "tertiary",
+        "displayName": "Vert de haie",
+        "canonical": "oklch(55.1% 0.087 134)",
+        "tonalRamp": [
+          "#060e02",
+          "#1b2a11",
+          "#344925",
+          "#4f6b3b",
+          "#6f8d5b",
+          "#95ae85",
+          "#bdd1b1",
+          "#e6f4dd"
+        ]
+      },
+      "sepia": {
+        "role": "neutral",
+        "displayName": "Sépia de lavis",
+        "canonical": "oklch(62.8% 0.040 64)",
+        "tonalRamp": [
+          "#100a05",
+          "#2d231a",
+          "#4d3f32",
+          "#705d4c",
+          "#927e6c",
+          "#b2a293",
+          "#d4c7bb",
+          "#f6ede4"
+        ],
+        "note": "Défini seulement dans l'objet C de app.js, couleur de carte."
+      },
+      "bandeau-2": {
+        "role": "neutral",
+        "displayName": "Bandeau ombré",
+        "canonical": "oklch(31.3% 0.025 56)",
+        "tonalRamp": [
+          "#0e0a08",
+          "#2a231f",
+          "#4a4039",
+          "#6c5e55",
+          "#8d7f76",
+          "#aea29a",
+          "#d0c7c1",
+          "#f4ede9"
+        ]
+      },
+      "bandeau-filet": {
+        "role": "neutral",
+        "displayName": "Filet de bandeau",
+        "canonical": "oklch(47.5% 0.035 62)",
+        "tonalRamp": [
+          "#0f0a06",
+          "#2c231b",
+          "#4c3f34",
+          "#6f5d4f",
+          "#917e6f",
+          "#b1a295",
+          "#d3c7bd",
+          "#f5ede6"
+        ]
+      },
+      "bandeau-texte-2": {
+        "role": "neutral",
+        "displayName": "Texte de bandeau secondaire",
+        "canonical": "oklch(84.5% 0.024 74)",
+        "tonalRamp": [
+          "#0e0b07",
+          "#29241e",
+          "#484138",
+          "#696054",
+          "#8b8174",
+          "#aca499",
+          "#cfc8c0",
+          "#f2eee8"
+        ]
+      },
+      "mer-ortho": {
+        "role": "neutral",
+        "displayName": "Mer d'aplat",
+        "canonical": "oklch(58.8% 0.042 194)",
+        "tonalRamp": [
+          "#040d0d",
+          "#172928",
+          "#2e4747",
+          "#476868",
+          "#688a89",
+          "#8facab",
+          "#b8cecd",
+          "#e3f2f1"
+        ],
+        "note": "Littéral dans ajouterMasquesOrtho(), fond photographique seulement."
+      }
+    },
+    "typographyMeta": {
+      "chiffre-cle": {
+        "displayName": "Chiffres clés",
+        "purpose": "Les quatre valeurs du cartouche du site ; 24 px sous 760 px."
+      },
+      "distance": {
+        "displayName": "Distance",
+        "purpose": "Distance de l'objet au CNPE dans sa fiche ; 400, 20 px, encre pâle si douteuse."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Nom du site dans le cartouche."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Nom de l'objet dans sa fiche, titre de la page projet."
+      },
+      "titre-bandeau": {
+        "displayName": "Titre du bandeau",
+        "purpose": "Nom du projet dans le bandeau sépia ; 18 px sous 760 px."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Base du document."
+      },
+      "body-panneau": {
+        "displayName": "Body du panneau",
+        "purpose": "Lignes de couches (14,5 px), attributs, listes, recherche."
+      },
+      "legende": {
+        "displayName": "Légende",
+        "purpose": "Définitions, sources, sous-titres de menu, relevé."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Capitales espacées ; nomme un bloc de contenu, jamais un surtitre."
+      },
+      "lieu": {
+        "displayName": "Lieu",
+        "purpose": "Nom du site posé sur la carte, italique, halo papier.",
+        "fontStyle": "italic"
+      }
+    },
+    "shadows": [
+      {
+        "name": "halo-etiquette",
+        "value": "text-shadow: 0 0 2px #faf8f3, 0 0 3px #faf8f3, 0 0 4px #faf8f3",
+        "purpose": "Réserve papier sous les noms de lieux en italique posés sur la carte. Pas une élévation : aucune box-shadow dans l'interface."
+      }
+    ],
+    "motion": [
+      {
+        "name": "easeOutExpo",
+        "value": "t === 1 ? 1 : 1 - 2^(-10t)",
+        "purpose": "Vols de carte : 1 400 ms pour une planche ou un résultat de recherche, 900 ms pour cadrer une commune ; durée 0 avec prefers-reduced-motion."
+      },
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "Ouverture du tiroir mobile en 0,35 s."
+      },
+      {
+        "name": "survol",
+        "value": "background-color .12s à .15s",
+        "purpose": "Survols des lignes, boutons et communes ; seule la couleur de fond change."
+      },
+      {
+        "name": "mouvement-reduit",
+        "value": "@media (prefers-reduced-motion: reduce) { transition-duration: 0s }",
+        "purpose": "Toutes les transitions CSS à 0 s ; les vols MapLibre passent à duration 0."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "telephone",
+        "value": "760px",
+        "note": "max-width ; bandeau 98 px sur deux rangées, tiroir bas avec --peek 172px"
+      }
+    ],
+    "layout": {
+      "h-bandeau": "56px",
+      "l-panneau": "360px",
+      "peek": "172px",
+      "assemblage": "262px",
+      "marge-encarts": "16px (12px sur téléphone)"
+    },
+    "numberFormat": {
+      "locale": "fr-FR",
+      "thousandsSeparator": "U+00A0",
+      "numberUnitSeparator": "U+00A0",
+      "replaces": "U+202F",
+      "figures": "tabular-nums",
+      "distances": "< 1 km arrondi à 10 m ; 1 à 10 km une décimale ; au-delà entier"
+    },
+    "basemap": {
+      "background": "#faf8f3",
+      "plan": {
+        "raster-saturation": -0.5,
+        "raster-contrast": -0.1,
+        "raster-opacity": 0.7,
+        "sousCadastre": 0.6
+      },
+      "ortho": {
+        "raster-saturation": -0.3,
+        "raster-opacity": 0.92
+      },
+      "cadastre": {
+        "raster-opacity": 0.85,
+        "minzoom": 13
+      },
+      "masquesOrtho": {
+        "mer-masque": {
+          "fill-color": "#5f8584",
+          "opacity": 1
+        },
+        "hors-emprise": {
+          "fill-color": "#faf8f3"
+        },
+        "emprise-filet": {
+          "line-color": "#2f241d",
+          "line-width": 1
+        },
+        "visibleSur": "ortho seulement"
+      }
+    },
+    "assemblage": {
+      "vueCourante": {
+        "fill": "rgba(200, 56, 90, .12)",
+        "stroke": "#c8385a",
+        "strokeWidth": 1.5
+      },
+      "contourSeulAuDela": 0.4,
+      "masqueAuDela": 0.9,
+      "anneau": {
+        "stroke-dasharray": "3 2.5",
+        "actif": "plein, 2px"
+      },
+      "mer": "rgba(79, 127, 176, .2)",
+      "communes": {
+        "fill": "#faf8f3",
+        "stroke": "rgba(47, 36, 29, .4)",
+        "choisie": "rgba(47, 36, 29, .16)"
+      }
+    },
+    "symbologie": {
+      "source": "docs/app.js : objet C, calquesDonnees(), ajouterSymboles(), pastilles P (26 x 16 px)",
+      "htb-lignes": "carmin, 400 kV 2.2 à 4.5 px, 90 kV 1.1 à 2.4 px (zooms 9 à 16), liseré papier 75 %",
+      "htb-postes": "lavis carmin 30 %, trait 1.2 px",
+      "htb-pylones": "carré papier 5 px cerclé carmin 1.5, zoom 12+",
+      "hta": "bleu, aérien plein 0.8/1.6/2.8 px (zooms 9/12/16), souterrain tireté 3 2, liseré papier 65 % dès zoom 11",
+      "bt": "bleu, zoom 13+, aérien 80 %, souterrain tireté 2 2 à 70 %",
+      "postes-hta-bt": "triangle papier cerclé bleu 1.6, zoom 12.5+",
+      "poteaux": "point bleu r 2.2, contour papier 0.8, zoom 14.5+",
+      "znieff1": "lavis vert 30 %, trait vert-fonce 1.1 plein",
+      "znieff2": "lavis vert 13 %, trait vert-fonce 1 tireté 3 2",
+      "natura2000": "hachures rgba(79,127,176,.55) à 45 degrés (ZSC et ZPS en sens opposés), trait bleu 1.2",
+      "conservatoire": "lavis sepia 20 %, pointillé encre 1 2",
+      "cnpe": "disque papier r 9.5 cerclé encre 1.8, cœur carmin r 5",
+      "cercles": "encre 1.3 tireté 5 4, liseré papier 3.5 à 45 %",
+      "communes": "encre 42 %, 0.9 px, trait mixte 6 2 1 2",
+      "icpe": "losange encre plein = A, losange papier cerclé = E, point encre r 2.4 = autre ; anneau carmin r 9 si écart de position",
+      "production": "cercles proportionnels à ln(puissance), papier 55 %, trait encre 1.4",
+      "selection": "lavis encre 10 %, halo encre 10 px à 22 %, trait encre 2.2 ; point : anneau r 13",
+      "mesure": "trait encre 2 tireté 2 1.5, sommets papier r 4.5 cerclés encre 2"
+    }
+  },
+  "components": [
+    {
+      "name": "Bouton du bandeau",
+      "kind": "button",
+      "refersTo": "bouton-bandeau",
+      "description": "Commande du bandeau sépia (Mesurer, Fond, Le projet) ; s'inverse en papier sur encre quand elle est active.",
+      "html": "<div class=\"ds-bandeau\"><button class=\"ds-bouton\" type=\"button\"><svg class=\"ds-ic\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path d=\"M2.5 13.5 13.5 2.5l4 4-11 11z\"/><path d=\"M6 10l1.6 1.6M8.5 7.5l1.6 1.6M11 5l1.6 1.6\"/></svg>Mesurer</button><button class=\"ds-bouton\" type=\"button\" aria-pressed=\"true\"><svg class=\"ds-ic\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path d=\"M2.5 13.5 13.5 2.5l4 4-11 11z\"/><path d=\"M6 10l1.6 1.6M8.5 7.5l1.6 1.6M11 5l1.6 1.6\"/></svg>Mesurer</button></div>",
+      "css": ":host{--encre:#2f241d;--encre-2:#5a4a3d;--encre-3:#6f5f51;--papier:#faf8f3;--papier-2:#f2eee5;--papier-3:#e9e3d6;--filet:#d8d1c4;--carmin:#c8385a;--bleu:#4f7fb0;--vert:#8fae74;--vert-fonce:#5d7d47;--bandeau:#2f241d;--bandeau-2:#3b2e25;--bandeau-filet:#6b5848;--bandeau-texte:#faf8f3;--bandeau-texte-2:#d6cabb;--police:\"Source Sans 3\",\"Source Sans Pro\",system-ui,sans-serif;--ease:cubic-bezier(.16,1,.3,1);} .ds-bandeau{display:flex;gap:8px;padding:11px 16px;background:var(--bandeau);font-family:var(--police)} .ds-bouton{height:34px;display:inline-flex;align-items:center;gap:7px;padding:0 12px;border:1px solid var(--bandeau-filet);border-radius:3px;background:transparent;color:var(--bandeau-texte);font:inherit;font-size:14px;cursor:pointer;transition:background-color .15s,border-color .15s} .ds-bouton:hover{background:var(--bandeau-2);border-color:var(--bandeau-texte-2)} .ds-bouton:focus-visible{outline:2px solid var(--bandeau-texte);outline-offset:2px} .ds-bouton[aria-pressed=\"true\"]{background:var(--papier);color:var(--encre);border-color:var(--papier)} .ds-ic{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}"
+    },
+    {
+      "name": "Champ de recherche",
+      "kind": "input",
+      "refersTo": "champ-recherche",
+      "description": "Recherche d'adresse ou de commune dans le bandeau, loupe au trait, curseur carmin.",
+      "html": "<div class=\"ds-bandeau\"><label class=\"ds-recherche\"><svg class=\"ds-ic\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><circle cx=\"8.5\" cy=\"8.5\" r=\"5.5\"/><path d=\"M12.6 12.6 17 17\"/></svg><input type=\"search\" placeholder=\"Rechercher une adresse ou une commune\"></label></div>",
+      "css": ":host{--encre:#2f241d;--encre-2:#5a4a3d;--encre-3:#6f5f51;--papier:#faf8f3;--papier-2:#f2eee5;--papier-3:#e9e3d6;--filet:#d8d1c4;--carmin:#c8385a;--bleu:#4f7fb0;--vert:#8fae74;--vert-fonce:#5d7d47;--bandeau:#2f241d;--bandeau-2:#3b2e25;--bandeau-filet:#6b5848;--bandeau-texte:#faf8f3;--bandeau-texte-2:#d6cabb;--police:\"Source Sans 3\",\"Source Sans Pro\",system-ui,sans-serif;--ease:cubic-bezier(.16,1,.3,1);} .ds-bandeau{padding:11px 16px;background:var(--bandeau);font-family:var(--police)} .ds-recherche{position:relative;display:block;width:340px} .ds-recherche .ds-ic{position:absolute;left:10px;top:8px;width:18px;height:18px;fill:none;stroke:var(--bandeau-texte-2);stroke-width:1.6;stroke-linecap:round} .ds-recherche input{width:100%;height:34px;padding:0 12px 0 36px;border:1px solid var(--bandeau-filet);border-radius:3px;background:var(--bandeau-2);color:var(--bandeau-texte);font:inherit;font-size:14px;caret-color:var(--carmin)} .ds-recherche input::placeholder{color:var(--bandeau-texte-2)} .ds-recherche input:focus{outline:none;border-color:var(--bandeau-texte)}"
+    },
+    {
+      "name": "Ligne de couche",
+      "kind": "custom",
+      "refersTo": "couche",
+      "description": "Case, pastille fidèle au symbole de carte, libellé et compte « dans la vue / total » ; variante hors échelle.",
+      "html": "<div class=\"ds-panneau\"><p class=\"ds-label\"><span>Transport HTB</span><span>IGN</span></p><button class=\"ds-couche\" type=\"button\" role=\"checkbox\" aria-checked=\"true\"><span class=\"ds-case\"><svg viewBox=\"0 0 10 10\"><path d=\"M2 5.2 4.2 7.4 8 3\"/></svg></span><svg class=\"ds-pastille\" viewBox=\"0 0 26 16\"><path d=\"M2 5h22\" stroke=\"#c8385a\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><path d=\"M2 11h22\" stroke=\"#c8385a\" stroke-width=\"1.6\" stroke-linecap=\"round\"/></svg><span>Lignes 400 kV et 90 kV</span><span class=\"ds-compte\"><b>8</b><span> / 36</span></span></button><button class=\"ds-couche ds-hors\" type=\"button\" role=\"checkbox\" aria-checked=\"true\"><span class=\"ds-case\"><svg viewBox=\"0 0 10 10\"><path d=\"M2 5.2 4.2 7.4 8 3\"/></svg></span><svg class=\"ds-pastille\" viewBox=\"0 0 26 16\"><rect x=\"10.5\" y=\"5.5\" width=\"5\" height=\"5\" fill=\"#faf8f3\" stroke=\"#c8385a\" stroke-width=\"1.4\"/></svg><span>Pylônes<small>visible à partir du 1:46 000</small></span><span class=\"ds-compte\"><span>442</span></span></button></div>",
+      "css": ":host{--encre:#2f241d;--encre-2:#5a4a3d;--encre-3:#6f5f51;--papier:#faf8f3;--papier-2:#f2eee5;--papier-3:#e9e3d6;--filet:#d8d1c4;--carmin:#c8385a;--bleu:#4f7fb0;--vert:#8fae74;--vert-fonce:#5d7d47;--bandeau:#2f241d;--bandeau-2:#3b2e25;--bandeau-filet:#6b5848;--bandeau-texte:#faf8f3;--bandeau-texte-2:#d6cabb;--police:\"Source Sans 3\",\"Source Sans Pro\",system-ui,sans-serif;--ease:cubic-bezier(.16,1,.3,1);} .ds-panneau{width:360px;background:var(--papier);color:var(--encre);font-family:var(--police);padding:4px 0 8px} .ds-label{display:flex;justify-content:space-between;margin:0;padding:6px 20px 4px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--encre-3)} .ds-label span+span{font-weight:400;letter-spacing:0;text-transform:none} .ds-couche{display:grid;grid-template-columns:14px 26px minmax(0,1fr) auto;align-items:center;column-gap:10px;width:100%;min-height:34px;padding:4px 20px;border:0;background:none;text-align:left;font:inherit;font-size:14.5px;color:inherit;cursor:pointer;transition:background-color .12s} .ds-couche:hover{background:var(--papier-2)} .ds-couche:focus-visible{outline:2px solid var(--encre);outline-offset:2px} .ds-case{width:14px;height:14px;border:1px solid var(--encre);border-radius:2px;display:grid;place-items:center;background:var(--encre)} .ds-case svg{width:10px;height:10px;stroke:var(--papier);stroke-width:2.2;fill:none} .ds-pastille{width:26px;height:16px} .ds-couche small{display:block;font-size:12px;font-style:italic;color:var(--encre-3)} .ds-compte{font-size:13px;font-variant-numeric:tabular-nums;white-space:nowrap} .ds-compte span{color:var(--encre-3)} .ds-hors .ds-pastille{opacity:.45}"
+    },
+    {
+      "name": "Planches",
+      "kind": "chip",
+      "refersTo": "planche",
+      "description": "Sélecteur segmenté des planches fixes de 2, 5, 10 et 20 km, cadre et séparations d'encre.",
+      "html": "<div class=\"ds-planches\" role=\"group\"><button type=\"button\" aria-pressed=\"false\">2 km</button><button type=\"button\" aria-pressed=\"true\">5 km</button><button type=\"button\" aria-pressed=\"false\">10 km</button><button type=\"button\" aria-pressed=\"false\">20 km</button></div>",
+      "css": ":host{--encre:#2f241d;--encre-2:#5a4a3d;--encre-3:#6f5f51;--papier:#faf8f3;--papier-2:#f2eee5;--papier-3:#e9e3d6;--filet:#d8d1c4;--carmin:#c8385a;--bleu:#4f7fb0;--vert:#8fae74;--vert-fonce:#5d7d47;--bandeau:#2f241d;--bandeau-2:#3b2e25;--bandeau-filet:#6b5848;--bandeau-texte:#faf8f3;--bandeau-texte-2:#d6cabb;--police:\"Source Sans 3\",\"Source Sans Pro\",system-ui,sans-serif;--ease:cubic-bezier(.16,1,.3,1);} .ds-planches{display:grid;grid-template-columns:repeat(4,1fr);width:238px;border:1px solid var(--encre);font-family:var(--police)} .ds-planches button{height:30px;border:0;background:var(--papier);color:var(--encre);font:inherit;font-size:13.5px;font-variant-numeric:tabular-nums;cursor:pointer} .ds-planches button+button{border-left:1px solid var(--encre)} .ds-planches button:hover{background:var(--papier-3)} .ds-planches button:focus-visible{outline:2px solid var(--encre);outline-offset:2px} .ds-planches button[aria-pressed=\"true\"]{background:var(--encre);color:var(--papier)}"
+    },
+    {
+      "name": "Commandes de carte",
+      "kind": "nav",
+      "refersTo": "cadre-carte",
+      "description": "Colonne zoomer, dézoomer, recentrer dans un cadre d'encre, sans ombre ni arrondi.",
+      "html": "<div class=\"ds-zoom\"><button type=\"button\" aria-label=\"Zoomer\"><svg viewBox=\"0 0 20 20\"><path d=\"M10 4v12M4 10h12\"/></svg></button><button type=\"button\" aria-label=\"Dézoomer\"><svg viewBox=\"0 0 20 20\"><path d=\"M4 10h12\"/></svg></button><button type=\"button\" aria-label=\"Recentrer\"><svg viewBox=\"0 0 20 20\"><circle cx=\"10\" cy=\"10\" r=\"5.5\"/><path d=\"M10 1.5v4M10 14.5v4M1.5 10h4M14.5 10h4\"/></svg></button></div>",
+      "css": ":host{--encre:#2f241d;--encre-2:#5a4a3d;--encre-3:#6f5f51;--papier:#faf8f3;--papier-2:#f2eee5;--papier-3:#e9e3d6;--filet:#d8d1c4;--carmin:#c8385a;--bleu:#4f7fb0;--vert:#8fae74;--vert-fonce:#5d7d47;--bandeau:#2f241d;--bandeau-2:#3b2e25;--bandeau-filet:#6b5848;--bandeau-texte:#faf8f3;--bandeau-texte-2:#d6cabb;--police:\"Source Sans 3\",\"Source Sans Pro\",system-ui,sans-serif;--ease:cubic-bezier(.16,1,.3,1);} .ds-zoom{display:inline-flex;flex-direction:column;border:1px solid var(--encre);background:var(--papier)} .ds-zoom button{width:36px;height:36px;display:grid;place-items:center;border:0;background:none;color:var(--encre);cursor:pointer} .ds-zoom button+button{border-top:1px solid var(--filet)} .ds-zoom button:hover{background:var(--papier-3)} .ds-zoom button:focus-visible{outline:2px solid var(--encre);outline-offset:2px} .ds-zoom svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}"
+    },
+    {
+      "name": "Menu des fonds",
+      "kind": "nav",
+      "refersTo": "cadre-carte",
+      "description": "Choix du fond en libellés avec usage, pastille carmin sur le choix courant ; pas de vignettes.",
+      "html": "<div class=\"ds-menu\" role=\"menu\"><button role=\"menuitemradio\" aria-checked=\"true\">Plan IGN<small>désaturé, pour lire les réseaux</small></button><button role=\"menuitemradio\" aria-checked=\"false\">Photographies aériennes<small>BD ORTHO, IGN · mer en aplat</small></button><button role=\"menuitemradio\" aria-checked=\"false\">Plan cadastral<small>parcelles visibles à partir du 1:25 000</small></button></div>",
+      "css": ":host{--encre:#2f241d;--encre-2:#5a4a3d;--encre-3:#6f5f51;--papier:#faf8f3;--papier-2:#f2eee5;--papier-3:#e9e3d6;--filet:#d8d1c4;--carmin:#c8385a;--bleu:#4f7fb0;--vert:#8fae74;--vert-fonce:#5d7d47;--bandeau:#2f241d;--bandeau-2:#3b2e25;--bandeau-filet:#6b5848;--bandeau-texte:#faf8f3;--bandeau-texte-2:#d6cabb;--police:\"Source Sans 3\",\"Source Sans Pro\",system-ui,sans-serif;--ease:cubic-bezier(.16,1,.3,1);} .ds-menu{min-width:260px;padding:4px 0;background:var(--papier);color:var(--encre);border:1px solid var(--encre);font-family:var(--police);font-size:15px} .ds-menu button{display:block;width:100%;position:relative;padding:8px 14px 8px 34px;border:0;background:none;text-align:left;font:inherit;color:inherit;cursor:pointer} .ds-menu small{display:block;color:var(--encre-3);font-size:12.5px} .ds-menu button:hover,.ds-menu button:focus-visible{background:var(--papier-3);outline:none} .ds-menu button[aria-checked=\"true\"]::before{content:\"\";position:absolute;left:14px;top:14px;width:9px;height:9px;border-radius:50%;background:var(--carmin)}"
+    },
+    {
+      "name": "Chiffres clés du cartouche",
+      "kind": "card",
+      "refersTo": "cadre-carte",
+      "description": "Grille 2 x 2 sous un filet d'encre : chiffre en 28 px gras tabulaire, définition en légende dessous.",
+      "html": "<dl class=\"ds-chiffres\"><div><dt>2 tranches en service depuis 1990 et 1992</dt><dd>2 × 1 330 MW</dd></div><div><dt>tension des lignes d'évacuation</dt><dd>400 kV</dd></div><div><dt>à moins de 5 km</dt><dd>9 ICPE</dd></div><div><dt>rayon du plan particulier d'intervention</dt><dd>20 km</dd></div></dl>",
+      "css": ":host{--encre:#2f241d;--encre-2:#5a4a3d;--encre-3:#6f5f51;--papier:#faf8f3;--papier-2:#f2eee5;--papier-3:#e9e3d6;--filet:#d8d1c4;--carmin:#c8385a;--bleu:#4f7fb0;--vert:#8fae74;--vert-fonce:#5d7d47;--bandeau:#2f241d;--bandeau-2:#3b2e25;--bandeau-filet:#6b5848;--bandeau-texte:#faf8f3;--bandeau-texte-2:#d6cabb;--police:\"Source Sans 3\",\"Source Sans Pro\",system-ui,sans-serif;--ease:cubic-bezier(.16,1,.3,1);} .ds-chiffres{display:grid;grid-template-columns:1fr 1fr;width:320px;margin:0;border-top:1px solid var(--encre);background:var(--papier);color:var(--encre);font-family:var(--police)} .ds-chiffres>div{display:flex;flex-direction:column-reverse;justify-content:flex-end;gap:3px;padding:10px 12px 10px 0;border-bottom:1px solid var(--filet)} .ds-chiffres>div:nth-child(even){padding-left:12px;border-left:1px solid var(--filet)} .ds-chiffres dd{margin:0;font-size:28px;font-weight:700;line-height:1;letter-spacing:-.01em;white-space:nowrap;font-variant-numeric:tabular-nums} .ds-chiffres dt{font-size:12.5px;line-height:1.3;color:var(--encre-3)}"
+    },
+    {
+      "name": "Distance au CNPE",
+      "kind": "custom",
+      "refersTo": "cadre-carte",
+      "description": "Bloc distance de la fiche d'objet, entre filet d'encre et filet clair ; variante douteuse en 20 px encre pâle.",
+      "html": "<div class=\"ds-distance\"><b>2,4 km</b><span>du CNPE de Penly, à vol d'oiseau</span></div>",
+      "css": ":host{--encre:#2f241d;--encre-2:#5a4a3d;--encre-3:#6f5f51;--papier:#faf8f3;--papier-2:#f2eee5;--papier-3:#e9e3d6;--filet:#d8d1c4;--carmin:#c8385a;--bleu:#4f7fb0;--vert:#8fae74;--vert-fonce:#5d7d47;--bandeau:#2f241d;--bandeau-2:#3b2e25;--bandeau-filet:#6b5848;--bandeau-texte:#faf8f3;--bandeau-texte-2:#d6cabb;--police:\"Source Sans 3\",\"Source Sans Pro\",system-ui,sans-serif;--ease:cubic-bezier(.16,1,.3,1);} .ds-distance{display:flex;align-items:baseline;gap:10px;width:320px;padding:12px 0;border-top:1px solid var(--encre);border-bottom:1px solid var(--filet);background:var(--papier);color:var(--encre);font-family:var(--police)} .ds-distance b{font-size:30px;line-height:1;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap} .ds-distance span{font-size:13px;line-height:1.3;color:var(--encre-3)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Le plan cadastral",
+    "overview": "La carte se lit comme une planche de géomètre : encre sépia sur papier crème, cadres d'un seul filet, lavis transparents codés par réseau. Rien ne flotte, rien ne brille. Chaque élément d'interface est un cartouche posé sur la feuille : bandeau sépia en tête, panneau papier à gauche, encarts encadrés d'encre sur la carte. La densité est celle d'une légende de plan : des lignes de 34 px, des chiffres tabulaires, des comptes d'objets alignés à droite.\n\nLa donnée porte toute la couleur. Le fond IGN est désaturé et éclairci pour que le carmin, le bleu de Prusse et le vert pré ne désignent que des réseaux et des zonages. L'interface reste en encre et papier ; le carmin y revient seulement comme accent ponctuel (choix coché, survol de lien, écart, erreur). La sélection d'un objet se dessine à l'encre, jamais dans une teinte de donnée.\n\nLa signature du système est le tableau d'assemblage : un encart d'encre qui situe la vue courante et sert de navigateur entre planches fixes de 2, 5, 10 et 20 km. Le système refuse le visualiseur SIG par défaut : panneau blanc à cases génériques, boutons flottants bleus arrondis à ombre, galerie de fonds en vignettes.",
+    "keyCharacteristics": [
+      "Encre sépia sur papier, cadres de 1 px, angles vifs (4 px au plus).",
+      "Aucune ombre portée ; la profondeur vient du filet d'encre et de l'ordre des couches.",
+      "Lavis transparents codés : carmin pour le transport HTB, bleu de Prusse pour la distribution et l'eau, vert pré pour l'environnement.",
+      "Une seule famille, Source Sans 3 : italique pour les lieux, chiffres tabulaires partout où l'on compte ou mesure.",
+      "Pastilles de légende qui reproduisent exactement le symbole dessiné sur la carte.",
+      "Nombres au format fr-FR, espace insécable U+00A0 pour les milliers et avant l'unité."
+    ],
+    "rules": [
+      {
+        "name": "The Lavis codés Rule",
+        "body": "Une teinte égale un réseau : carmin pour le transport HTB, bleu de Prusse pour la distribution et l'eau, vert pré pour l'environnement, sépia pour le foncier protégé. Une nouvelle couche prend la teinte de sa famille ; une nouvelle famille exige une teinte qui ne contredit aucune des quatre.",
+        "section": "colors"
+      },
+      {
+        "name": "The Encre qui désigne Rule",
+        "body": "La sélection et la mesure se dessinent à l'encre (lavis à 10 %, halo de 10 px à 22 %, trait de 2,2 px ; cercle de 13 px de rayon pour un point). Une teinte de donnée ne sert jamais à signaler un état.",
+        "section": "colors"
+      },
+      {
+        "name": "The Fond qui se tait Rule",
+        "body": "Le fond IGN est toujours atténué : plan à saturation -0,5, contraste -0,1, opacité 0,7 (0,6 sous le cadastre) ; photographies à saturation -0,3, opacité 0,92 ; cadastre PCI à 0,85 à partir du zoom 13. Les lavis doivent rester la couleur la plus forte de la planche.",
+        "section": "colors"
+      },
+      {
+        "name": "The Italique des lieux Rule",
+        "body": "Les noms de lieux posés sur la carte sont en italique, comme sur un plan. L'italique sert aussi aux remarques et aux conditions d'affichage (« visible à partir du 1:46 000 »), jamais à l'emphase.",
+        "section": "typography"
+      },
+      {
+        "name": "The Chiffres alignés Rule",
+        "body": "Tout nombre qui se compare ou se lit en colonne porte `font-variant-numeric: tabular-nums` : comptes de couches, chiffres clés, distances, coordonnées Lambert-93, échelle, planches, table des sources. Les nombres sont formatés en fr-FR ; le séparateur de milliers est l'espace insécable U+00A0 (l'espace fine U+202F d'Intl est remplacée, car elle disparaît en gras tabulaire) et une espace insécable sépare le nombre de son unité (« 1 330 MW », « 2,4 km »). Les distances sous 1 km s'arrondissent à 10 m ; de 1 à 10 km, une décimale ; au-delà, entier.",
+        "section": "typography"
+      },
+      {
+        "name": "The Planche fixe Rule",
+        "body": "Une planche de 2, 5, 10 ou 20 km s'ouvre toujours au même cadrage autour du CNPE, quelle que soit la vue de départ.",
+        "section": "layout"
+      },
+      {
+        "name": "The Papier sans ombre Rule",
+        "body": "Un élément qui doit se détacher reçoit un cadre d'encre de 1 px, jamais une ombre portée.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Masques de l'ortho Rule",
+        "body": "Sur le fond photographique seulement, trois calques transforment l'image en planche : un lavis opaque de mer d'aplat sur la mer (les aplats pâles en escalier de la BD ORTHO transparaissent même à 0,9), du papier sur tout ce qui sort de l'emprise d'étude, et un filet d'encre de 1 px qui borde cette emprise comme un cadre de planche. Ces calques sont masqués sur les autres fonds.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do encadrer tout encart, menu ou liste flottante d'un filet d'encre de 1 px sur papier opaque.",
+      "Do garder les rayons à 2 ou 3 px, 4 px au plus.",
+      "Do donner à chaque nouvelle couche une pastille de 26 × 16 px qui reproduit son symbole de carte, construite à partir des mêmes couleurs, épaisseurs et tirets.",
+      "Do dessiner la sélection et la mesure à l'encre.",
+      "Do formater chaque nombre en fr-FR avec U+00A0 pour les milliers et avant l'unité, en chiffres tabulaires.",
+      "Do poser les noms de lieux en italique avec un halo papier.",
+      "Do indiquer la source et le compte d'objets de chaque couche, et l'échelle à partir de laquelle elle s'affiche.",
+      "Do respecter `prefers-reduced-motion` pour chaque animation nouvelle, en JS comme en CSS."
+    ],
+    "donts": [
+      "Don't utiliser d'ombre portée ni de bouton flottant arrondi.",
+      "Don't proposer les fonds sous forme de galerie de vignettes ; un menu de libellés avec leur usage suffit.",
+      "Don't employer le bleu de Prusse ou le vert pré dans le chrome de l'interface ; ce sont des couleurs de donnée.",
+      "Don't afficher le fond IGN à pleine saturation.",
+      "Don't utiliser le label en capitales comme surtitre au-dessus d'un titre ; il ne sert qu'à nommer un bloc de contenu.",
+      "Don't laisser l'espace fine U+202F d'Intl dans un nombre affiché."
+    ]
+  }
+}

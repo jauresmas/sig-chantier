@@ -1,0 +1,326 @@
+[
+  {
+    "source": "EDF",
+    "fichier": "01_donnees_brutes/edf/centrales_nucleaires.geojson",
+    "page": "https://opendata.edf.fr/datasets/centrales-de-production-nucleaire-edf",
+    "objets": 57,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "",
+    "telecharge_le": "2026-11-21T03:05:37"
+  },
+  {
+    "source": "EDF",
+    "fichier": "01_donnees_brutes/edf/centrales_hydrauliques.geojson",
+    "page": "https://opendata.edf.fr/datasets/centrales-de-production-hydraulique-de-edf-sa",
+    "objets": 51,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "",
+    "telecharge_le": "2026-11-21T03:05:37"
+  },
+  {
+    "source": "EDF",
+    "fichier": "01_donnees_brutes/edf/centrales_thermiques.geojson",
+    "page": "https://opendata.edf.fr/datasets/centrales-de-production-thermique-a-flamme-d-edf-sa-fioul-gaz-charbon",
+    "objets": 19,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "",
+    "telecharge_le": "2026-11-21T03:05:37"
+  },
+  {
+    "source": "EDF",
+    "fichier": "01_donnees_brutes/edf/indisponibilites_penly.csv",
+    "page": "https://opendata.edf.fr/datasets/indisponibilites-des-moyens-de-production-edf-sa",
+    "objets": 615,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "",
+    "telecharge_le": "2026-11-21T03:05:38"
+  },
+  {
+    "source": "EDF",
+    "fichier": "01_donnees_brutes/edf/indisponibilites_penly_historique_2015.csv",
+    "page": "https://opendata.edf.fr/datasets/historique-des-indisponibilites-des-moyens-de-production-de-edf-sa-depuis-2015",
+    "objets": 7576,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "",
+    "telecharge_le": "2026-11-21T03:05:47"
+  },
+  {
+    "source": "EDF",
+    "fichier": "01_donnees_brutes/edf/seuils_rejets_thermiques.csv",
+    "page": "https://opendata.edf.fr/datasets/seuils-et-limites-des-rejets-thermiques-aux-abords-des-centrales-nucleaires-d-edf-sa",
+    "objets": 51,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "",
+    "telecharge_le": "2026-11-21T03:05:47"
+  },
+  {
+    "source": "EDF",
+    "fichier": "01_donnees_brutes/edf/historique_productions_1948.csv",
+    "page": "https://opendata.edf.fr/datasets/historique-des-productions-edf-sa",
+    "objets": 217,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "",
+    "telecharge_le": "2026-11-21T03:05:47"
+  },
+  {
+    "source": "EDF",
+    "fichier": "01_donnees_brutes/edf/disponibilite_parc_nucleaire.csv",
+    "page": "https://opendata.edf.fr/datasets/disponibilite-du-parc-nucleaire-d-edf-sa-depuis-2002",
+    "objets": 24,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "",
+    "telecharge_le": "2026-11-21T03:05:47"
+  },
+  {
+    "source": "Enedis",
+    "fichier": "01_donnees_brutes/enedis/enedis_hta_aerien.geojson",
+    "page": "https://opendata.enedis.fr/datasets/reseau-hta",
+    "objets": 1278,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "",
+    "telecharge_le": "2026-11-21T03:05:48"
+  },
+  {
+    "source": "Enedis",
+    "fichier": "01_donnees_brutes/enedis/enedis_hta_souterrain.geojson",
+    "page": "https://opendata.enedis.fr/datasets/reseau-souterrain-hta",
+    "objets": 3813,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "",
+    "telecharge_le": "2026-11-21T03:05:53"
+  },
+  {
+    "source": "Enedis",
+    "fichier": "01_donnees_brutes/enedis/enedis_bt_aerien.geojson",
+    "page": "https://opendata.enedis.fr/datasets/reseau-bt",
+    "objets": 4354,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "",
+    "telecharge_le": "2026-11-21T03:05:58"
+  },
+  {
+    "source": "Enedis",
+    "fichier": "01_donnees_brutes/enedis/enedis_bt_souterrain.geojson",
+    "page": "https://opendata.enedis.fr/datasets/reseau-souterrain-bt",
+    "objets": 15551,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "",
+    "telecharge_le": "2026-11-21T03:06:19"
+  },
+  {
+    "source": "Enedis",
+    "fichier": "01_donnees_brutes/enedis/enedis_postes_hta_bt.geojson",
+    "page": "https://opendata.enedis.fr/datasets/poste-electrique",
+    "objets": 1845,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "",
+    "telecharge_le": "2026-11-21T03:06:20"
+  },
+  {
+    "source": "Enedis",
+    "fichier": "01_donnees_brutes/enedis/enedis_poteaux_hta_bt.geojson",
+    "page": "https://opendata.enedis.fr/datasets/position-geographique-des-poteaux-hta-et-bt",
+    "objets": 9089,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "",
+    "telecharge_le": "2026-11-21T03:06:29"
+  },
+  {
+    "source": "Agence ORE (RTE, Enedis, EDF SEI, ELD)",
+    "fichier": "01_donnees_brutes/ore/registre_installations_production_stockage.geojson",
+    "page": "https://opendata.agenceore.fr/datasets/registre-national-installation-production-stockage-electricite-agrege",
+    "objets": 98,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "",
+    "telecharge_le": "2026-11-21T03:06:29"
+  },
+  {
+    "source": "Géorisques via Koumoul",
+    "fichier": "01_donnees_brutes/icpe/icpe.geojson",
+    "page": "https://koumoul.com/datasets/icpe",
+    "objets": 315,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "",
+    "telecharge_le": "2026-11-21T03:06:29"
+  },
+  {
+    "source": "IGN — BD TOPO V3",
+    "fichier": "01_donnees_brutes/ign/bdtopo_ligne_electrique.geojson",
+    "page": "https://geoservices.ign.fr/bdtopo",
+    "objets": 36,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "WFS BDTOPO_V3:ligne_electrique",
+    "telecharge_le": "2026-11-21T03:06:30"
+  },
+  {
+    "source": "IGN — BD TOPO V3",
+    "fichier": "01_donnees_brutes/ign/bdtopo_poste_de_transformation.geojson",
+    "page": "https://geoservices.ign.fr/bdtopo",
+    "objets": 10,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "WFS BDTOPO_V3:poste_de_transformation",
+    "telecharge_le": "2026-11-21T03:06:30"
+  },
+  {
+    "source": "IGN — BD TOPO V3",
+    "fichier": "01_donnees_brutes/ign/bdtopo_pylone.geojson",
+    "page": "https://geoservices.ign.fr/bdtopo",
+    "objets": 442,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "WFS BDTOPO_V3:pylone",
+    "telecharge_le": "2026-11-21T03:06:31"
+  },
+  {
+    "source": "IGN — BD TOPO V3",
+    "fichier": "01_donnees_brutes/ign/bdtopo_commune.geojson",
+    "page": "https://geoservices.ign.fr/bdtopo",
+    "objets": 114,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "WFS BDTOPO_V3:commune",
+    "telecharge_le": "2026-11-21T03:06:31"
+  },
+  {
+    "source": "IGN — BD TOPO V3",
+    "fichier": "01_donnees_brutes/ign/bdtopo_troncon_de_route.geojson",
+    "page": "https://geoservices.ign.fr/bdtopo",
+    "objets": 29264,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "WFS BDTOPO_V3:troncon_de_route",
+    "telecharge_le": "2026-11-21T03:07:07"
+  },
+  {
+    "source": "IGN — BD TOPO V3",
+    "fichier": "01_donnees_brutes/ign/bdtopo_troncon_de_voie_ferree.geojson",
+    "page": "https://geoservices.ign.fr/bdtopo",
+    "objets": 154,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "WFS BDTOPO_V3:troncon_de_voie_ferree",
+    "telecharge_le": "2026-11-21T03:07:07"
+  },
+  {
+    "source": "IGN — BD TOPO V3",
+    "fichier": "01_donnees_brutes/ign/bdtopo_cours_d_eau.geojson",
+    "page": "https://geoservices.ign.fr/bdtopo",
+    "objets": 69,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "WFS BDTOPO_V3:cours_d_eau",
+    "telecharge_le": "2026-11-21T03:07:08"
+  },
+  {
+    "source": "IGN — BD TOPO V3",
+    "fichier": "01_donnees_brutes/ign/bdtopo_surface_hydrographique.geojson",
+    "page": "https://geoservices.ign.fr/bdtopo",
+    "objets": 1593,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "WFS BDTOPO_V3:surface_hydrographique",
+    "telecharge_le": "2026-11-21T03:07:08"
+  },
+  {
+    "source": "IGN — BD TOPO V3",
+    "fichier": "01_donnees_brutes/ign/bdtopo_zone_d_activite_ou_d_interet.geojson",
+    "page": "https://geoservices.ign.fr/bdtopo",
+    "objets": 1304,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "WFS BDTOPO_V3:zone_d_activite_ou_d_interet",
+    "telecharge_le": "2026-11-21T03:07:09"
+  },
+  {
+    "source": "IGN — BD TOPO V3",
+    "fichier": "01_donnees_brutes/ign/bdtopo_batiment.geojson",
+    "page": "https://geoservices.ign.fr/bdtopo",
+    "objets": 7112,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "WFS BDTOPO_V3:batiment",
+    "telecharge_le": "2026-11-21T03:07:10"
+  },
+  {
+    "source": "IGN — BD TOPO V3",
+    "fichier": "01_donnees_brutes/ign/bdtopo_zone_de_vegetation.geojson",
+    "page": "https://geoservices.ign.fr/bdtopo",
+    "objets": 1030,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "WFS BDTOPO_V3:zone_de_vegetation",
+    "telecharge_le": "2026-11-21T03:07:12"
+  },
+  {
+    "source": "IGN — BD TOPO V3",
+    "fichier": "01_donnees_brutes/ign/bdtopo_haie.geojson",
+    "page": "https://geoservices.ign.fr/bdtopo",
+    "objets": 1994,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "WFS BDTOPO_V3:haie",
+    "telecharge_le": "2026-11-21T03:07:13"
+  },
+  {
+    "source": "PatriNat (OFB-MNHN-CNRS-IRD)",
+    "fichier": "01_donnees_brutes/patrinat/znieff1.geojson",
+    "page": "https://inpn.mnhn.fr/telechargement/cartes-et-information-geographique",
+    "objets": 94,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "WFS patrinat_znieff1:znieff1",
+    "telecharge_le": "2026-11-21T03:07:14"
+  },
+  {
+    "source": "PatriNat (OFB-MNHN-CNRS-IRD)",
+    "fichier": "01_donnees_brutes/patrinat/znieff2.geojson",
+    "page": "https://inpn.mnhn.fr/telechargement/cartes-et-information-geographique",
+    "objets": 14,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "WFS patrinat_znieff2:znieff2",
+    "telecharge_le": "2026-11-21T03:07:14"
+  },
+  {
+    "source": "PatriNat (OFB-MNHN-CNRS-IRD)",
+    "fichier": "01_donnees_brutes/patrinat/znieff1_mer.geojson",
+    "page": "https://inpn.mnhn.fr/telechargement/cartes-et-information-geographique",
+    "objets": 2,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "WFS patrinat_znieff1_mer:znieff1_mer",
+    "telecharge_le": "2026-11-21T03:07:14"
+  },
+  {
+    "source": "PatriNat (OFB-MNHN-CNRS-IRD)",
+    "fichier": "01_donnees_brutes/patrinat/znieff2_mer.geojson",
+    "page": "https://inpn.mnhn.fr/telechargement/cartes-et-information-geographique",
+    "objets": 2,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "WFS patrinat_znieff2_mer:znieff2_mer",
+    "telecharge_le": "2026-11-21T03:07:14"
+  },
+  {
+    "source": "PatriNat (OFB-MNHN-CNRS-IRD)",
+    "fichier": "01_donnees_brutes/patrinat/sic.geojson",
+    "page": "https://inpn.mnhn.fr/telechargement/cartes-et-information-geographique",
+    "objets": 9,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "WFS patrinat_sic:sic",
+    "telecharge_le": "2026-11-21T03:07:15"
+  },
+  {
+    "source": "PatriNat (OFB-MNHN-CNRS-IRD)",
+    "fichier": "01_donnees_brutes/patrinat/zps.geojson",
+    "page": "https://inpn.mnhn.fr/telechargement/cartes-et-information-geographique",
+    "objets": 1,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "WFS patrinat_zps:zps",
+    "telecharge_le": "2026-11-21T03:07:15"
+  },
+  {
+    "source": "PatriNat (OFB-MNHN-CNRS-IRD)",
+    "fichier": "01_donnees_brutes/patrinat/cdl.geojson",
+    "page": "https://inpn.mnhn.fr/telechargement/cartes-et-information-geographique",
+    "objets": 7,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "WFS patrinat_cdl2:cdl",
+    "telecharge_le": "2026-11-21T03:07:15"
+  },
+  {
+    "source": "DGFiP / Etalab",
+    "fichier": "01_donnees_brutes/cadastre/parcelles_76618_petit_caux.geojson",
+    "page": "https://cadastre.data.gouv.fr/datasets/cadastre-etalab",
+    "objets": 10153,
+    "licence": "Licence Ouverte / Open Licence v2.0 (Etalab)",
+    "note": "",
+    "telecharge_le": "2026-11-21T03:07:18"
+  }
+]

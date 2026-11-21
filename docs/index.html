@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SIG chantier Penly : contraintes autour du CNPE de Penly</title>
+<meta name="description" content="Carte web des contraintes autour du CNPE de Penly (Petit-Caux, Seine-Maritime), construite uniquement avec des données ouvertes : réseaux électriques HTB, HTA et BT, environnement, installations classées.">
+<meta name="theme-color" content="#2f241d">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="i-loupe" viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M12.6 12.6 17 17"/></symbol>
+  <symbol id="i-regle" viewBox="0 0 20 20"><path d="M2.5 13.5 13.5 2.5l4 4-11 11z"/><path d="M6 10l1.6 1.6M8.5 7.5l1.6 1.6M11 5l1.6 1.6"/></symbol>
+  <symbol id="i-fond" viewBox="0 0 20 20"><path d="M10 3 2.5 7 10 11l7.5-4z"/><path d="M2.5 10.5 10 14.5l7.5-4M2.5 14 10 18l7.5-4"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 20 20"><path d="M6 8l4 4 4-4"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 20 20"><path d="M10 4v12M4 10h12"/></symbol>
+  <symbol id="i-moins" viewBox="0 0 20 20"><path d="M4 10h12"/></symbol>
+  <symbol id="i-cible" viewBox="0 0 20 20"><circle cx="10" cy="10" r="5.5"/><path d="M10 1.5v4M10 14.5v4M1.5 10h4M14.5 10h4"/></symbol>
+  <symbol id="i-retour" viewBox="0 0 20 20"><path d="M16 10H4.5M9 5.5 4.5 10 9 14.5"/></symbol>
+  <symbol id="i-croix" viewBox="0 0 20 20"><path d="M5 5l10 10M15 5 5 15"/></symbol>
+  <symbol id="i-info" viewBox="0 0 20 20"><circle cx="10" cy="10" r="7.5"/><path d="M10 9v5"/><circle cx="10" cy="6.2" r=".4"/></symbol>
+  <symbol id="i-externe" viewBox="0 0 20 20"><path d="M11 4h5v5M16 4l-7 7"/><path d="M14 11.5V16H4V6h4.5"/></symbol>
+</svg>
+
+<header class="bandeau">
+  <div class="titre">
+    <h1>SIG chantier Penly</h1>
+    <p>Contraintes autour du CNPE de Penly · Petit-Caux (76)</p>
+  </div>
+  <form class="recherche" id="recherche" role="search" autocomplete="off">
+    <label for="q" class="vh">Rechercher une adresse ou une commune</label>
+    <svg class="ic" aria-hidden="true"><use href="#i-loupe"/></svg>
+    <input id="q" type="search" placeholder="Rechercher une adresse ou une commune" role="combobox"
+           aria-autocomplete="list" aria-controls="resultats" aria-expanded="false" spellcheck="false">
+    <ul id="resultats" role="listbox" aria-label="Résultats de recherche" hidden></ul>
+  </form>
+  <div class="outils">
+    <button id="btn-mesure" class="bouton" type="button" aria-pressed="false" title="Mesurer une distance sur la carte">
+      <svg class="ic" aria-hidden="true"><use href="#i-regle"/></svg><span class="libelle">Mesurer</span>
+    </button>
+    <div class="menu-fond">
+      <button id="btn-fond" class="bouton" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="menu-fond">
+        <svg class="ic" aria-hidden="true"><use href="#i-fond"/></svg>
+        <span class="libelle">Fond : <span id="fond-nom">Plan IGN</span></span>
+        <svg class="ic chevron" aria-hidden="true"><use href="#i-chevron"/></svg>
+      </button>
+      <div id="menu-fond" class="menu" role="menu" hidden>
+        <button type="button" role="menuitemradio" aria-checked="true" data-fond="plan">Plan IGN<small>désaturé, pour lire les réseaux</small></button>
+        <button type="button" role="menuitemradio" aria-checked="false" data-fond="ortho">Photographies aériennes<small>BD ORTHO, IGN · mer en aplat</small></button>
+        <button type="button" role="menuitemradio" aria-checked="false" data-fond="cadastre">Plan cadastral<small>parcelles visibles à partir du 1:25 000</small></button>
+      </div>
+    </div>
+    <button id="btn-apropos" class="bouton" type="button" aria-controls="vue-apropos" title="Le projet, la chaîne de traitement et les sources">
+      <svg class="ic" aria-hidden="true"><use href="#i-info"/></svg><span class="libelle">Le projet</span>
+    </button>
+  </div>
+</header>
+
+<main class="plan">
+  <aside class="panneau" id="panneau" aria-label="Fiche du site, couches et fiches d'objets">
+    <button class="poignee" id="poignee" type="button" aria-expanded="false" aria-controls="panneau">
+      <span class="vh">Déplier le panneau</span>
+    </button>
+
+    <section class="vue" id="vue-couches" aria-labelledby="site-nom">
+      <div class="cartouche">
+        <h2 id="site-nom">CNPE de Penly</h2>
+        <p class="lieu">Petit-Caux, Seine-Maritime · exploitant EDF</p>
+        <dl class="chiffres" id="chiffres">
+          <div><dt>2 tranches en service depuis 1990 et 1992</dt><dd>2 × 1 330 MW</dd></div>
+          <div><dt>tension des lignes d'évacuation</dt><dd>400 kV</dd></div>
+          <div><dt>à moins de 5&nbsp;km, hors 1 position douteuse</dt><dd>9 ICPE</dd></div>
+          <div><dt>rayon du plan particulier d'intervention</dt><dd>20 km</dd></div>
+        </dl>
+        <p class="avert">Deux réacteurs supplémentaires sont en projet sur le site (débat public CNDP 2022-2023). Leurs emprises de chantier ne sont pas publiques : elles ne figurent pas sur la carte.</p>
+      </div>
+      <div class="couches" id="couches" aria-label="Couches de la carte"></div>
+      <p class="pied" id="pied">Données ouvertes extraites le 21/11/2026 · Licence Ouverte Etalab 2.0</p>
+    </section>
+
+    <section class="vue" id="vue-fiche" hidden aria-live="polite"></section>
+
+    <section class="vue" id="vue-apropos" hidden aria-labelledby="apropos-titre">
+      <div class="entete-vue">
+        <button class="retour" type="button" data-retour><svg class="ic" aria-hidden="true"><use href="#i-retour"/></svg>Couches</button>
+      </div>
+      <div class="texte">
+        <h2 id="apropos-titre" tabindex="-1">Le projet</h2>
+        <p>Démonstrateur d'un SIG de chantier construit uniquement avec des données ouvertes, autour de la centrale nucléaire de Penly. La carte est la dernière étape d'une chaîne rejouable : chaque couche vient d'une source citée, d'un script et d'un modèle QGIS versionnés dans le même dépôt.</p>
+        <h3>La chaîne de traitement</h3>
+        <ol class="chaine">
+          <li><b>Collecte.</b> 36 jeux téléchargés par API (Data Fair, WFS Géoplateforme), avec un manifeste des URL, licences et dates.</li>
+          <li><b>Base Lambert-93.</b> Un GeoPackage de 29 couches et 5 tables, contrôlé et reprojeté en RGF93 / Lambert-93.</li>
+          <li><b>Projet QGIS.</b> Symbologie, formulaires de saisie du plan d'installation de chantier (PIC) et quatre modèles du Modeleur graphique : intégration open data, zonages, contraintes d'emprise, conversion CAO vers PIC.</li>
+          <li><b>Plan imprimable.</b> Un plan de situation A3 généré par mise en page QGIS. <a href="plan_situation_A3.pdf">Télécharger le PDF</a></li>
+          <li><b>Carte web.</b> Export GeoJSON allégé, distances au CNPE calculées en Lambert-93, contrôle de position des ICPE (commune déclarée contre commune du point), affichage MapLibre GL JS sur fonds IGN.</li>
+        </ol>
+        <h3>Ce que la carte ne montre pas</h3>
+        <p>Les emprises du futur chantier, qui ne sont pas publiques. Le plan CAO d'exemple utilisé pour tester la conversion vers le PIC est fictif ; il reste dans le dépôt et n'est pas affiché ici.</p>
+        <h3>Sources</h3>
+        <table class="sources" id="sources">
+          <thead><tr><th scope="col">Couche</th><th scope="col">Source</th><th scope="col" class="num">Objets</th></tr></thead>
+          <tbody></tbody>
+        </table>
+        <p class="note">Projet personnel, sans lien avec les producteurs de données. Données sous Licence Ouverte Etalab 2.0, extraites le <span id="date-extraction">21/11/2026</span>. Fonds de plan : IGN, Géoplateforme.</p>
+        <p id="lien-depot" hidden><a href="#">Code source et données sur GitHub</a></p>
+      </div>
+    </section>
+  </aside>
+
+  <div class="carte">
+    <div id="map" role="region" aria-label="Carte des contraintes autour du CNPE de Penly"></div>
+    <div class="zoom" role="group" aria-label="Navigation">
+      <button type="button" id="zoom-plus" title="Zoomer"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg><span class="vh">Zoomer</span></button>
+      <button type="button" id="zoom-moins" title="Dézoomer"><svg class="ic" aria-hidden="true"><use href="#i-moins"/></svg><span class="vh">Dézoomer</span></button>
+      <button type="button" id="recentrer" title="Recentrer sur le CNPE"><svg class="ic" aria-hidden="true"><use href="#i-cible"/></svg><span class="vh">Recentrer sur le CNPE</span></button>
+    </div>
+    <div class="releve" id="releve" aria-live="off">
+      <span id="releve-xy">X 571 513 · Y 6 987 855</span><span class="sep">Lambert-93</span><span id="releve-echelle">1 : 25 000</span>
+    </div>
+    <div class="mesure" id="mesure" hidden>
+      <p><b id="mesure-total">0 m</b> <span id="mesure-detail">Cliquer sur la carte pour poser le premier point.</span></p>
+      <div class="mesure-actions">
+        <button type="button" id="mesure-effacer">Effacer</button>
+        <button type="button" id="mesure-fin">Terminer</button>
+      </div>
+    </div>
+    <section class="assemblage" id="assemblage" aria-labelledby="assemblage-titre">
+      <h2 id="assemblage-titre">Tableau d'assemblage</h2>
+      <div class="assemblage-carte" id="assemblage-carte"></div>
+      <div class="planches" role="group" aria-label="Planches à échelle fixe">
+        <button type="button" data-planche="2" aria-pressed="false">2 km</button>
+        <button type="button" data-planche="5" aria-pressed="false">5 km</button>
+        <button type="button" data-planche="10" aria-pressed="false">10 km</button>
+        <button type="button" data-planche="20" aria-pressed="false">20 km</button>
+      </div>
+      <p id="assemblage-legende">Choisir une planche ou cliquer une commune.</p>
+    </section>
+    <p class="chargement" id="chargement" role="status">Chargement des couches…</p>
+  </div>
+</main>
+
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

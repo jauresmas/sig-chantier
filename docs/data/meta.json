@@ -1,0 +1,168 @@
+{
+ "genere_le": "2026-11-21",
+ "couches": {
+  "cercles": {
+   "titre": "Cercles d'étude 2 / 5 / 10 / 20 km",
+   "source": "Calcul du projet (scripts/02_construire_gpkg.py)",
+   "url_source": "",
+   "date": null,
+   "licence": "Licence Ouverte Etalab 2.0",
+   "objets": 4,
+   "decoupe_km": null,
+   "octets": 22131
+  },
+  "cnpe": {
+   "titre": "CNPE de Penly",
+   "source": "EDF",
+   "url_source": "https://opendata.edf.fr",
+   "date": "2026-11-21",
+   "licence": "Licence Ouverte Etalab 2.0",
+   "objets": 1,
+   "decoupe_km": null,
+   "octets": 296
+  },
+  "production": {
+   "titre": "Installations de production et de stockage",
+   "source": "Agence ORE",
+   "url_source": "https://opendata.agenceore.fr",
+   "date": "2026-11-21",
+   "licence": "Licence Ouverte Etalab 2.0",
+   "objets": 48,
+   "decoupe_km": null,
+   "octets": 30255,
+   "note": "98 installations du registre agrégé, localisées au centre de leur commune et regroupées en 48 communes."
+  },
+  "htb_lignes": {
+   "titre": "Lignes électriques HTB",
+   "source": "IGN, BD TOPO V3",
+   "url_source": "https://geoservices.ign.fr/bdtopo",
+   "date": "2026-11-21",
+   "licence": "Licence Ouverte Etalab 2.0",
+   "objets": 36,
+   "decoupe_km": null,
+   "octets": 15640
+  },
+  "htb_postes": {
+   "titre": "Postes électriques HTB",
+   "source": "IGN, BD TOPO V3",
+   "url_source": "https://geoservices.ign.fr/bdtopo",
+   "date": "2026-11-21",
+   "licence": "Licence Ouverte Etalab 2.0",
+   "objets": 10,
+   "decoupe_km": null,
+   "octets": 3102
+  },
+  "htb_pylones": {
+   "titre": "Pylônes HTB",
+   "source": "IGN, BD TOPO V3",
+   "url_source": "https://geoservices.ign.fr/bdtopo",
+   "date": "2026-11-21",
+   "licence": "Licence Ouverte Etalab 2.0",
+   "objets": 442,
+   "decoupe_km": null,
+   "octets": 88259
+  },
+  "hta": {
+   "titre": "Réseau HTA",
+   "source": "Enedis",
+   "url_source": "https://opendata.enedis.fr",
+   "date": "2026-11-21",
+   "licence": "Licence Ouverte Etalab 2.0",
+   "objets": 4329,
+   "decoupe_km": 21,
+   "octets": 1173845
+  },
+  "postes_hta_bt": {
+   "titre": "Postes HTA/BT",
+   "source": "Enedis",
+   "url_source": "https://opendata.enedis.fr",
+   "date": "2026-11-21",
+   "licence": "Licence Ouverte Etalab 2.0",
+   "objets": 1612,
+   "decoupe_km": 21,
+   "octets": 256301
+  },
+  "bt": {
+   "titre": "Réseau BT",
+   "source": "Enedis",
+   "url_source": "https://opendata.enedis.fr",
+   "date": "2026-11-21",
+   "licence": "Licence Ouverte Etalab 2.0",
+   "objets": 3641,
+   "decoupe_km": 10,
+   "octets": 859527
+  },
+  "poteaux": {
+   "titre": "Poteaux HTA et BT",
+   "source": "Enedis",
+   "url_source": "https://opendata.enedis.fr",
+   "date": "2026-11-21",
+   "licence": "Licence Ouverte Etalab 2.0",
+   "objets": 880,
+   "decoupe_km": 10,
+   "octets": 135871
+  },
+  "znieff1": {
+   "titre": "ZNIEFF de type 1",
+   "source": "PatriNat (OFB, MNHN, CNRS, IRD)",
+   "url_source": "https://inpn.mnhn.fr",
+   "date": "2026-11-21",
+   "licence": "Licence Ouverte Etalab 2.0",
+   "objets": 89,
+   "decoupe_km": 21,
+   "octets": 115865
+  },
+  "znieff2": {
+   "titre": "ZNIEFF de type 2",
+   "source": "PatriNat (OFB, MNHN, CNRS, IRD)",
+   "url_source": "https://inpn.mnhn.fr",
+   "date": "2026-11-21",
+   "licence": "Licence Ouverte Etalab 2.0",
+   "objets": 16,
+   "decoupe_km": 21,
+   "octets": 197760
+  },
+  "natura2000": {
+   "titre": "Natura 2000",
+   "source": "PatriNat (OFB, MNHN, CNRS, IRD)",
+   "url_source": "https://inpn.mnhn.fr",
+   "date": "2026-11-21",
+   "licence": "Licence Ouverte Etalab 2.0",
+   "objets": 9,
+   "decoupe_km": 21,
+   "octets": 176675
+  },
+  "conservatoire": {
+   "titre": "Terrains du Conservatoire du littoral",
+   "source": "PatriNat (OFB, MNHN, CNRS, IRD)",
+   "url_source": "https://inpn.mnhn.fr",
+   "date": "2026-11-21",
+   "licence": "Licence Ouverte Etalab 2.0",
+   "objets": 5,
+   "decoupe_km": 21,
+   "octets": 17237
+  },
+  "icpe": {
+   "titre": "Installations classées (ICPE)",
+   "source": "Géorisques, via Koumoul",
+   "url_source": "https://www.georisques.gouv.fr",
+   "date": "2026-11-21",
+   "licence": "Licence Ouverte Etalab 2.0",
+   "objets": 315,
+   "decoupe_km": null,
+   "octets": 181281,
+   "note": "Contrôle de position : 21 établissements sur 315 sont positionnés hors de leur commune déclarée (erreur de géocodage ou fusion de communes).",
+   "ecarts_position": 21
+  },
+  "communes": {
+   "titre": "Communes",
+   "source": "IGN, BD TOPO V3",
+   "url_source": "https://geoservices.ign.fr/bdtopo",
+   "date": "2026-11-21",
+   "licence": "Licence Ouverte Etalab 2.0",
+   "objets": 88,
+   "decoupe_km": 21,
+   "octets": 205214
+  }
+ }
+}
