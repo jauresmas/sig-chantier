@@ -7,6 +7,10 @@
 02_donnees/*.gpkg-wal
 02_donnees/*.gpkg-shm
 
+# Publication MapStore : mot de passe du rôle PostgreSQL et adresses propres à l'instance locale
+05_mapstore/.env
+05_mapstore/adresses.json
+
 # Fichiers de travail
 __pycache__/
 *.pyc

@@ -5,7 +5,8 @@ production d'électricité (CNPE) de Penly, à Petit-Caux (Seine-Maritime), où 
 
 Le dépôt reproduit la chaîne de travail complète d'un SIG de chantier : collecte et contrôle des données, base
 structurée en Lambert-93, modèle de données du plan d'installation de chantier (PIC), conversion CAO vers SIG,
-traitements automatisés (Python et Modeleur graphique QGIS), plan imprimable et carte web.
+traitements automatisés (Python et Modeleur graphique QGIS), plan imprimable, carte web et publication
+PostGIS / GeoServer / MapStore.
 
 > Les emprises du futur chantier ne sont pas publiques : elles ne figurent nulle part dans ce projet.
 > Le fichier `04_cao/exemple_fictif_PIC.dxf` est un plan **fictif** qui sert uniquement à tester la conversion CAO.
@@ -36,6 +37,18 @@ python -m http.server 8000 --directory docs
 
 puis http://localhost:8000.
 
+## Publication MapStore
+
+Les mêmes couches publiées comme dans un SIG d'entreprise : base **PostGIS**, services **GeoServer** (WMS, WFS,
+19 styles SLD écrits en Python) et application dédiée dans **MapStore**, avec table des matières légendée, fiches au
+clic, signets sur les cercles d'étude et fonds IGN. Chaîne rejouable et détail dans [`05_mapstore/`](05_mapstore/README.md).
+
+![Application MapStore « SIG chantier Penly » : carte des contraintes et fiche de présentation](05_mapstore/images/application.png)
+
+| Table des matières et légendes | Fiche d'une ICPE à la position douteuse |
+|---|---|
+| ![Table des matières de l'application MapStore : groupes de couches et légendes](05_mapstore/images/couches.png) | ![Fiche d'information MapStore d'une ICPE dont le point tombe hors de sa commune déclarée](05_mapstore/images/fiche-icpe.png) |
+
 ## Arborescence
 
 ```
@@ -51,7 +64,7 @@ sig-chantier-penly/
 │   ├── sig_chantier_penly.qgz  projet QGIS (chemins relatifs, styles, formulaires PIC, fonds IGN, mise en page A3)
 │   └── modeles/                4 modèles du Modeleur graphique (.model3)
 ├── 04_cao/                     plans CAO (DXF) à intégrer, dont l'exemple fictif
-├── 05_mapstore/                publication GeoServer / MapStore (étape suivante)
+├── 05_mapstore/                publication PostGIS, GeoServer et MapStore ; images/ : captures de l'application
 ├── 06_exports/                 plan_situation_A3.pdf / .png
 ├── docs/                       carte web (GitHub Pages) et ses données GeoJSON
 └── scripts/                    chaîne de traitement Python (rejouable)
@@ -170,11 +183,10 @@ le suffixe devient le champ `type_zone`. Le résultat se colle ensuite dans `pic
 
 ## Étapes suivantes
 
-1. **Saisir un PIC** dans `pic_chantier.gpkg` (formulaires prêts) ou l'importer depuis un DXF avec le modèle 04.
-2. **Publier dans MapStore** : charger les couches dans PostGIS, les publier dans GeoServer, puis créer une carte et
-   un contexte « SIG chantier Penly » (dossier `05_mapstore/`).
-3. **Contrôle qualité** : fiche de contrôle par couche (géométries, champs obligatoires, cohérence avec les listes de valeurs).
-4. **Cas d'usage** : itinéraires de convois sur `ref_routes`, analyse des contraintes environnementales, suivi des
+1. **Saisir un PIC** dans `pic_chantier.gpkg` (formulaires prêts) ou l'importer depuis un DXF avec le modèle 04,
+   puis le publier dans MapStore avec les autres couches.
+2. **Contrôle qualité** : fiche de contrôle par couche (géométries, champs obligatoires, cohérence avec les listes de valeurs).
+3. **Cas d'usage** : itinéraires de convois sur `ref_routes`, analyse des contraintes environnementales, suivi des
    indisponibilités de Penly 1 et 2 (tables EDF) dans un tableau de bord.
 
 ## Sources et licence des données
